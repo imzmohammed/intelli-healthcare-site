@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- IH-BUILD-10 · 2026-07-23 · added Sample analysis + Security pages (nav/footer/hero CTA), og:image social card · design=editorial-ledger · if you can read this in view-source, the deployed file is current -->
+<!-- IH-BUILD-11 · 2026-07-23 · embedded 90-second demo film section (#demo) on homepage · design=editorial-ledger · if you can read this in view-source, the deployed file is current -->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -124,6 +124,14 @@
   .attr{font-family:var(--mono);font-size:.68rem;color:var(--ink2);padding:10px 2px 0;letter-spacing:.02em}
   .attr::before{content:"1  ";font-size:.62rem;vertical-align:super}
 
+  /* ---------- demo film ---------- */
+  section.film-sec{padding:74px 0 0}
+  .film{background:var(--doc);border:1px solid var(--hair2);border-radius:6px;padding:10px;
+        box-shadow:0 1px 0 rgba(22,51,58,.04),0 30px 50px -38px rgba(22,51,58,.45)}
+  .film video{display:block;width:100%;border-radius:3px;background:var(--dark)}
+  .film-cap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:12px 6px 2px;
+            font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--ink2)}
+
   /* ---------- how it works: ruled columns, no boxes ---------- */
   section.how{padding:78px 0 8px}
   .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:34px}
@@ -187,6 +195,7 @@
   <div class="bar">
     <a class="wordmark" href="/">Intelligent<i> Healthcare</i></a>
     <nav class="top" aria-label="Site">
+      <a href="#demo">Watch the demo</a>
       <a href="#how">How it works</a>
       <a href="/sample.html">Sample analysis</a>
       <a href="/security.html">Security</a>
@@ -235,6 +244,17 @@
       <div class="fig fee"><b>15%</b><small>of recovered dollars is our only fee. $0 upfront. No recovery, no invoice.</small></div>
     </div>
     <div class="wrap"><p class="attr">Overturn and appeal-rate figures as reported for Medicare Advantage (CMS/KFF); results vary by payer and case mix.</p></div>
+  </section>
+
+  <section class="wrap film-sec" id="demo" aria-label="Product demo video">
+    <div class="sec-head"><h2 class="section">See it work — 90 seconds</h2></div>
+    <div class="film">
+      <video controls preload="none" playsinline poster="/demo-poster.jpg">
+        <source src="/ElevenLabs_Intelli-HealthCare%20(1)%20(1).mp4" type="video/mp4">
+        Your browser doesn't support embedded video — <a href="/ElevenLabs_Intelli-HealthCare%20(1)%20(1).mp4">download the demo instead</a>.
+      </video>
+      <div class="film-cap"><span>One denied claim, end to end: read → rank → appeal → recovered</span><span>90 sec · sound on</span></div>
+    </div>
   </section>
 
   <section class="wrap how" id="how">
