@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- IH-SECURITY-1 · 2026-07-23 · Security & PHI page · design=editorial-ledger -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security &amp; PHI — Intelligent Healthcare</title>
+<meta name="description" content="How Intelligent Healthcare protects your data: BAA before any file moves, encrypted transfer, PHI-minimized drafting, human approval on every appeal, and a full audit trail.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://intelli-healthcare.com/security.html">
+<meta property="og:title" content="Security &amp; PHI — Intelligent Healthcare">
+<meta property="og:description" content="BAA first, encrypted transfer, PHI-minimized drafting, human approval on every appeal, full audit trail.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://intelli-healthcare.com/security.html">
+<meta property="og:image" content="https://intelli-healthcare.com/og.jpg">
+<meta name="theme-color" content="#132E33">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23132E33'/%3E%3Cpath d='M15 38h9l5-12 7 20 6-14 4 6h8' fill='none' stroke='%23F7F4EE' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F7F4EE;--doc:#FFFDF8;--ink:#16333A;--ink2:#51696C;--hair:#DCD4C4;--hair2:#C9BFA9;
+        --teal:#0E5E63;--teal-deep:#0A474B;--brick:#A6402A;--pine:#1D6B52;--ochre:#8F6400;--dark:#10282D;
+        --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--body:"Public Sans",system-ui,sans-serif;--display:"Fraunces",Georgia,serif}
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16.5px;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--teal);color:var(--paper)}
+  a{color:var(--teal)}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  header{padding:30px 0 0}
+  .bar{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--ink);position:relative}
+  .bar::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--ink);opacity:.35}
+  .wordmark{font-family:var(--display);font-weight:600;font-size:1.28rem;color:var(--ink);text-decoration:none}
+  .wordmark i{font-style:normal;color:var(--teal)}
+  nav.top{display:flex;gap:26px;align-items:baseline;flex-wrap:wrap}
+  nav.top a{font-family:var(--mono);font-size:.78rem;color:var(--ink2);text-decoration:none}
+  nav.top a:hover{color:var(--teal);text-decoration:underline;text-underline-offset:4px}
+  nav.top a[aria-current]{color:var(--teal)}
+  .lede{padding:54px 0 26px}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);margin-bottom:20px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--hair2)}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(2.1rem,4.4vw,3rem);line-height:1.07;letter-spacing:-.014em;margin-bottom:20px;text-wrap:balance;max-width:15em}
+  h1 em{font-style:italic;font-weight:500;color:var(--teal)}
+  .sub{color:var(--ink2);max-width:42em;font-size:1.04rem}
+  /* practice list of controls */
+  .controls{border-top:1px solid var(--ink);margin-top:26px}
+  .ctrl{display:grid;grid-template-columns:.9fr 2fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--hair)}
+  .ctrl .k{font-family:var(--display);font-weight:600;font-size:1.24rem;letter-spacing:-.005em}
+  .ctrl .k .tag{display:block;font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-top:8px}
+  .ctrl p{color:var(--ink2);font-size:.98rem}
+  .ctrl p b{color:var(--ink);font-weight:600}
+  /* status / posture band */
+  .posture{margin:52px 0 0;color:#D8E2DD;padding:36px 38px;background:var(--dark);border-radius:6px}
+  .posture h2{font-family:var(--display);font-weight:500;font-style:italic;font-size:1.5rem;color:#F4F1E8;margin-bottom:14px}
+  .posture ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 34px;margin-top:6px}
+  .posture li{color:#B9C9C3;font-size:.95rem;padding-left:24px;position:relative;line-height:1.5}
+  .posture li::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;background:#3E9C79;border-radius:2px}
+  .posture li b{color:#E3B664;font-weight:600}
+  .posture .note{margin-top:18px;font-size:.82rem;color:#8FA7A0}
+  /* FAQ */
+  .faq{padding:52px 0 6px}
+  .faq h2{font-family:var(--display);font-weight:600;font-size:1.7rem;letter-spacing:-.008em;margin-bottom:8px}
+  .qa{border-top:1px solid var(--hair);padding:22px 0}
+  .qa:first-of-type{border-top:1px solid var(--hair2);margin-top:22px}
+  .qa h3{font-size:1.04rem;font-weight:700;margin-bottom:8px}
+  .qa p{color:var(--ink2);font-size:.96rem;max-width:52em}
+  /* CTA */
+  .cta{margin:50px 0 0;color:#D8E2DD;padding:34px 38px;background:var(--teal-deep);border-radius:6px;display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap}
+  .cta h2{font-family:var(--display);font-weight:500;font-style:italic;font-size:1.4rem;color:#F4F1E8;max-width:20em}
+  .btn{display:inline-block;background:#F7F4EE;color:var(--teal-deep);text-decoration:none;font-weight:700;font-size:.98rem;padding:13px 22px;border-radius:5px;white-space:nowrap}
+  .btn:hover{background:#fff}
+  footer{margin-top:70px;border-top:1px solid var(--ink);padding:26px 0 56px;position:relative}
+  footer::before{content:"";position:absolute;left:0;right:0;top:3px;height:1px;background:var(--ink);opacity:.35}
+  footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:baseline}
+  .colo{font-family:var(--mono);font-size:.78rem;color:var(--ink2);line-height:2}
+  .colo b{color:var(--ink);font-weight:600}.colo a{color:var(--teal);text-decoration:none}
+  .legal{max-width:40em;font-size:.74rem;color:var(--ink2);font-family:var(--mono);line-height:1.8;text-align:right}
+  @media (max-width:820px){.ctrl{grid-template-columns:1fr;gap:8px}.posture ul{grid-template-columns:1fr}.legal{text-align:left}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="bar">
+    <a class="wordmark" href="/">Intelligent<i> Healthcare</i></a>
+    <nav class="top" aria-label="Site">
+      <a href="/#how">How it works</a>
+      <a href="/sample.html">Sample analysis</a>
+      <a href="/security.html" aria-current="page">Security</a>
+      <a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="lede">
+    <p class="eyebrow">Security &amp; PHI</p>
+    <h1>Your 835s are PHI. <em>We treat them that way from the first byte.</em></h1>
+    <p class="sub">Remittance files carry protected health information, so handling them is the whole job — not an
+    afterthought. Here is exactly how your data is protected, in plain terms, before you send us anything.</p>
+  </section>
+
+  <div class="controls">
+    <div class="ctrl">
+      <div class="k">Agreement first<span class="tag">Before any file moves</span></div>
+      <p>A <b>Business Associate Agreement</b> is signed before a single file is transferred — we operate as your
+      business associate under HIPAA, with the obligations that carries. A mutual NDA is available alongside it.
+      No BAA, no data.</p>
+    </div>
+    <div class="ctrl">
+      <div class="k">Encrypted in transit<span class="tag">How files travel</span></div>
+      <p>Files move as <b>password-protected, AES-256 encrypted archives</b> or through your own secure
+      file-share — never as plain email attachments. The password travels on a separate channel from the file.</p>
+    </div>
+    <div class="ctrl">
+      <div class="k">Minimum necessary<span class="tag">PHI-minimized drafting</span></div>
+      <p>Appeal letters are drafted with the <b>least PHI necessary</b> to make the case. De-identified data is
+      used wherever the argument doesn't require identifiers, in line with the HIPAA minimum-necessary standard.</p>
+    </div>
+    <div class="ctrl">
+      <div class="k">A human decides<span class="tag">Nothing files itself</span></div>
+      <p>Every appeal is reviewed and approved by a <b>named person on your staff</b> before it is filed. Each
+      filed packet carries a Certification of Human Review recording who approved it and when — the software never
+      submits to a payer on its own.</p>
+    </div>
+    <div class="ctrl">
+      <div class="k">Full audit trail<span class="tag">Accountable by design</span></div>
+      <p>Every action — ingest, draft, edit, approval, filing, recovery match — is <b>logged and attributable</b>.
+      Access is authenticated and role-scoped, and the record is available to you.</p>
+    </div>
+    <div class="ctrl">
+      <div class="k">Your data, returned<span class="tag">On request or at termination</span></div>
+      <p>Your files and PHI remain yours. On request or when an engagement ends, data is <b>returned or securely
+      destroyed</b> per the BAA — we don't retain what we no longer need.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="posture">
+      <h2>Where we stand today — stated plainly.</h2>
+      <ul>
+        <li><b>BAA</b> executed before any data transfer</li>
+        <li><b>AES-256</b> encryption for files at rest and in transit</li>
+        <li>Appeal drafting runs <b>offline</b> against your files by default</li>
+        <li><b>Human approval</b> gate on 100% of filed appeals</li>
+        <li>Attributable <b>audit log</b> across the whole pipeline</li>
+        <li><b>SOC 2 Type I</b> preparation underway</li>
+      </ul>
+      <p class="note">We describe our posture honestly and won't claim certifications we don't yet hold. Ask us
+      anything specific — we'd rather answer a hard security question now than after you've sent a file.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Straight answers</h2>
+    <div class="qa">
+      <h3>Do you sign a BAA?</h3>
+      <p>Yes — always, and before any file moves. We can send our template for your counsel to review, or work from yours.</p>
+    </div>
+    <div class="qa">
+      <h3>Where does our data live, and who can see it?</h3>
+      <p>Your files are processed for the purpose of the analysis and appeals only, under access that is authenticated and role-scoped. We apply the minimum-necessary standard, and we return or destroy your data on request or at the end of the engagement.</p>
+    </div>
+    <div class="qa">
+      <h3>Does an AI read our patients' records?</h3>
+      <p>The denial analysis and drafting run deterministically against the structured remittance data and the documentation you provide. Drafting is PHI-minimized, and no appeal is filed without a named human on your staff approving it first.</p>
+    </div>
+    <div class="qa">
+      <h3>What if we want to stop?</h3>
+      <p>Your data is returned or securely destroyed per the BAA, and you keep every report and letter already produced. There's no lock-in — the pilot is designed to prove itself or end cleanly.</p>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Have a security question before you send anything? Good — ask it first.</h2>
+    <a class="btn" href="mailto:admin@intelli-healthcare.com?subject=Security%20question%20-%20%5BPractice%20name%5D">Email us a security question</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="colo">
+      <div><b>Intelligent Healthcare</b> · Serving specialty practices nationwide</div>
+      <div><a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a> · <a href="/sample.html">Sample analysis</a></div>
+    </div>
+    <p class="legal">© 2026 Intelligent Healthcare. This page describes operational practices and is not legal
+    advice; the executed BAA and services agreement govern.</p>
+  </div>
+</footer>
+</body>
+</html>

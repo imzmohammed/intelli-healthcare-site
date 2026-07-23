@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- IH-BUILD-9 · 2026-07-22 · state/city references removed (6 spots) → nationwide positioning · design=editorial-ledger · if you can read this in view-source, the deployed file is current -->
+<!-- IH-BUILD-10 · 2026-07-23 · added Sample analysis + Security pages (nav/footer/hero CTA), og:image social card · design=editorial-ledger · if you can read this in view-source, the deployed file is current -->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +9,8 @@
 <meta property="og:description" content="Free 48-hour denial analysis: we read your 835s, show what's recoverable, and draft appeals your staff approves.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://intelli-healthcare.com/">
+<meta property="og:image" content="https://intelli-healthcare.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="We read your 835 remittance files, find the denials worth fighting, and draft evidence-cited appeals your staff approves. Free 48-hour denial analysis. Serving specialty practices nationwide.">
 <link rel="canonical" href="https://intelli-healthcare.com/">
 <meta name="theme-color" content="#132E33">
@@ -53,6 +55,7 @@
         font-weight:600;padding:10px 16px;z-index:99}
   .skip:focus{left:0}
 
+  /* ---------- masthead: ledger double-rule ---------- */
   header{padding:30px 0 0}
   .bar{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
        padding-bottom:14px;border-bottom:1px solid var(--ink);position:relative}
@@ -64,6 +67,7 @@
   nav.top a{font-family:var(--mono);font-size:.78rem;letter-spacing:.02em;color:var(--ink2);text-decoration:none}
   nav.top a:hover{color:var(--teal);text-decoration:underline;text-underline-offset:4px}
 
+  /* ---------- hero ---------- */
   .hero{display:grid;grid-template-columns:1.06fr .94fr;gap:64px;align-items:start;padding:72px 0 78px}
   .eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;
            letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);margin-bottom:22px}
@@ -82,6 +86,7 @@
   .quiet:hover{color:var(--teal);border-color:var(--teal)}
   .fine{font-size:.8rem;color:var(--ink2);margin-top:16px;max-width:36em}
 
+  /* ---------- the remittance excerpt (hero document) ---------- */
   .doc{background:var(--doc);border:1px solid var(--hair2);border-radius:6px;
        box-shadow:0 1px 0 rgba(22,51,58,.04),0 30px 50px -38px rgba(22,51,58,.45)}
   .doc-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
@@ -105,6 +110,7 @@
   .doc-foot{padding:13px 20px 15px;border-top:1px solid var(--hair);background:rgba(220,212,196,.18);
             border-radius:0 0 6px 6px;font-size:.8rem;color:var(--ink2);line-height:1.55}
 
+  /* ---------- figures row: hairline-ruled, no cards ---------- */
   .figures{border-top:1px solid var(--ink);border-bottom:1px solid var(--hair2)}
   .figures .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
   .fig{padding:30px 28px 26px}
@@ -118,6 +124,7 @@
   .attr{font-family:var(--mono);font-size:.68rem;color:var(--ink2);padding:10px 2px 0;letter-spacing:.02em}
   .attr::before{content:"1  ";font-size:.62rem;vertical-align:super}
 
+  /* ---------- how it works: ruled columns, no boxes ---------- */
   section.how{padding:78px 0 8px}
   .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:34px}
   h2.section{font-family:var(--display);font-weight:600;font-size:1.85rem;letter-spacing:-.008em;white-space:nowrap}
@@ -129,12 +136,14 @@
   .step h3{font-size:1.06rem;font-weight:700;line-height:1.4;margin-bottom:10px;letter-spacing:-.005em}
   .step p{color:var(--ink2);font-size:.93rem}
 
+  /* ---------- the one dark band ---------- */
   .trust{margin:74px 0 0;color:#D8E2DD;padding:40px 38px 42px;background:var(--dark);border-radius:6px}
   .trust h2{font-family:var(--display);font-weight:500;font-style:italic;font-size:1.7rem;
             letter-spacing:-.005em;color:#F4F1E8;margin-bottom:14px}
   .trust p{color:#B9C9C3;max-width:60em;font-size:.97rem}
   .trust b{color:#E3B664;font-weight:600}
 
+  /* ---------- colophon ---------- */
   footer{margin-top:84px;border-top:1px solid var(--ink);padding:26px 0 56px;position:relative}
   footer::before{content:"";position:absolute;left:0;right:0;top:3px;height:1px;background:var(--ink);opacity:.35}
   footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:baseline}
@@ -144,6 +153,7 @@
   .colo a:hover{text-decoration:underline;text-underline-offset:4px}
   .legal{max-width:44em;font-size:.74rem;color:var(--ink2);font-family:var(--mono);line-height:1.8;text-align:right}
 
+  /* ---------- motion: one quiet entrance; base fully visible ---------- */
   @media (prefers-reduced-motion: no-preference){
     .hero-copy{opacity:0;transform:translateY(6px);animation:settle .5s .05s forwards}
     .doc{opacity:0;transform:translateY(8px);animation:settle .55s .2s forwards}
@@ -178,6 +188,8 @@
     <a class="wordmark" href="/">Intelligent<i> Healthcare</i></a>
     <nav class="top" aria-label="Site">
       <a href="#how">How it works</a>
+      <a href="/sample.html">Sample analysis</a>
+      <a href="/security.html">Security</a>
       <a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a>
     </nav>
   </div>
@@ -193,7 +205,7 @@
       then detects each recovery automatically when the payer finally pays.</p>
       <div class="cta-row">
         <a class="btn" href="mailto:admin@intelli-healthcare.com?subject=Free%2048-hour%20denial%20analysis%20-%20%5BPractice%20name%5D&body=We%27d%20like%20the%20free%20analysis.%20Practice%3A%20%5Bname%5D%2C%20specialty%3A%20%5Bspecialty%5D%2C%20monthly%20claim%20volume%20(rough)%3A%20%5Bvolume%5D.">Request the free 48-hour analysis</a>
-        <a class="quiet" href="#how">How it works</a>
+        <a class="quiet" href="/sample.html">See a sample analysis</a>
       </div>
       <p class="fine">One 835 export in, a client-ready report back in 48 business hours. Free, and yours to keep either way.</p>
     </div>
@@ -269,7 +281,7 @@
   <div class="wrap">
     <div class="colo">
       <div><b>Intelligent Healthcare</b> · Serving specialty practices nationwide</div>
-      <div><a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a> · intelli-healthcare.com</div>
+      <div><a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a> · <a href="/sample.html">Sample analysis</a> · <a href="/security.html">Security &amp; PHI</a></div>
     </div>
     <p class="legal">© 2026 Intelligent Healthcare. Recovery estimates are directional planning
     figures, not guarantees, and nothing here is legal or billing-compliance advice.</p>
@@ -278,4 +290,3 @@
 
 </body>
 </html>
-
