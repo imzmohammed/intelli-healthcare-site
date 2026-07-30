@@ -1,206 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<!-- IH-SAMPLE-1 · 2026-07-23 · inline Denial Opportunity Analysis (synthetic sample) · design=editorial-ledger -->
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>A real denial analysis — Intelli-HealthCare</title>
-<meta name="description" content="See exactly what Intelli-HealthCare hands back: a sample Denial Opportunity Analysis — denied dollars by payer and category, and the highest-value appeals ranked by expected value.">
-<meta name="robots" content="index,follow">
+<meta name="description" content="See exactly what Intelli-HealthCare hands back: a sample Denial Opportunity Analysis produced from 835 remittance files. Yours is free, in 48 hours.">
 <link rel="canonical" href="https://intelli-healthcare.com/sample.html">
 <meta property="og:title" content="A real denial analysis — Intelli-HealthCare">
-<meta property="og:description" content="The exact report we return in 48 hours: denied dollars by payer and category, and your highest-value appeals ranked.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://intelli-healthcare.com/sample.html">
+<meta property="og:description" content="See exactly what Intelli-HealthCare hands back: a sample Denial Opportunity Analysis produced from 835 remittance files. Yours is free, in 48 hours.">
 <meta property="og:image" content="https://intelli-healthcare.com/og.jpg">
-<meta name="theme-color" content="#132E33">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23132E33'/%3E%3Cpath d='M15 38h9l5-12 7 20 6-14 4 6h8' fill='none' stroke='%23F7F4EE' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:url" content="https://intelli-healthcare.com/sample.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="12" fill="%23132E33"/><path d="M15 38h9l5-12 7 20 6-14 4 6h8" fill="none" stroke="%23F7F4EE" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--paper:#F7F4EE;--doc:#FFFDF8;--ink:#16333A;--ink2:#51696C;--hair:#DCD4C4;--hair2:#C9BFA9;
-        --teal:#0E5E63;--teal-deep:#0A474B;--brick:#A6402A;--pine:#1D6B52;--ochre:#8F6400;--dark:#10282D;
-        --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--body:"Public Sans",system-ui,sans-serif;--display:"Fraunces",Georgia,serif}
-  *{box-sizing:border-box;margin:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16.5px;-webkit-font-smoothing:antialiased}
-  ::selection{background:var(--teal);color:var(--paper)}
-  a{color:var(--teal)}
-  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
-  /* masthead */
-  header{padding:30px 0 0}
-  .bar{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
-       padding-bottom:14px;border-bottom:1px solid var(--ink);position:relative}
-  .bar::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--ink);opacity:.35}
-  .wordmark{font-family:var(--display);font-weight:600;font-size:1.28rem;color:var(--ink);text-decoration:none}
-  .wordmark i{font-style:normal;color:var(--teal)}
-  nav.top{display:flex;gap:26px;align-items:baseline;flex-wrap:wrap}
-  nav.top a{font-family:var(--mono);font-size:.78rem;color:var(--ink2);text-decoration:none}
-  nav.top a:hover{color:var(--teal);text-decoration:underline;text-underline-offset:4px}
-  nav.top a.navdemo{color:var(--teal);font-weight:600}
-  nav.top a[aria-current]{color:var(--teal)}
-  /* page head */
-  .lede{padding:54px 0 30px}
-  .eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;
-           text-transform:uppercase;color:var(--ink2);margin-bottom:20px}
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--hair2)}
-  h1{font-family:var(--display);font-weight:600;font-size:clamp(2.1rem,4.4vw,3rem);line-height:1.07;letter-spacing:-.014em;margin-bottom:20px;text-wrap:balance;max-width:16em}
-  h1 em{font-style:italic;font-weight:500;color:var(--teal)}
-  .sub{color:var(--ink2);max-width:40em;font-size:1.04rem}
-  /* the report document */
-  .report{background:var(--doc);border:1px solid var(--hair2);border-radius:7px;margin:14px 0 8px;
-          box-shadow:0 1px 0 rgba(22,51,58,.04),0 30px 55px -42px rgba(22,51,58,.5);overflow:hidden}
-  .rhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:18px 26px;border-bottom:1px solid var(--hair);background:rgba(220,212,196,.16)}
-  .rhead b{font-family:var(--mono);font-weight:600;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
-  .rhead span{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
-  .rbody{padding:30px 26px}
-  .headline{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid var(--hair);margin-bottom:26px}
-  .headline b{font-family:var(--display);font-weight:600;font-size:2.9rem;line-height:1;color:var(--pine);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
-  .headline small{color:var(--ink2);font-size:.92rem;max-width:26em}
-  h2.blk{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin:26px 0 12px}
-  table{width:100%;border-collapse:collapse;font-size:.94rem}
-  th,td{text-align:right;padding:10px 8px;border-bottom:1px solid var(--hair);font-variant-numeric:tabular-nums;white-space:nowrap}
-  th:first-child,td:first-child{text-align:left;white-space:normal}
-  thead th{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);font-weight:600;border-bottom:1px solid var(--hair2)}
-  tbody tr:last-child td{border-bottom:1px solid var(--hair2)}
-  td.rec{color:var(--pine);font-weight:600}
-  tfoot td{font-weight:700;border-bottom:none;padding-top:12px}
-  /* ranked targets */
-  .target{border-top:1px solid var(--hair);padding:18px 0;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:start}
-  .target:first-of-type{border-top:1px solid var(--hair2)}
-  .target .rk{font-family:var(--display);font-weight:600;font-size:1.5rem;color:var(--teal);line-height:1.1;min-width:1.4em}
-  .target .meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);margin-bottom:6px}
-  .target .meta .cat{color:var(--brick)}
-  .target .mv{font-size:.95rem;color:var(--ink);max-width:44em}
-  .target .amt{text-align:right}
-  .target .amt b{font-family:var(--mono);font-weight:600;font-size:1.1rem;font-variant-numeric:tabular-nums;display:block}
-  .target .amt small{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
-  .rfoot{padding:16px 26px;border-top:1px solid var(--hair);background:rgba(220,212,196,.16);font-size:.8rem;color:var(--ink2);line-height:1.55}
-  .synthetic{display:inline-block;font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-             color:var(--ochre);border:1.5px solid var(--ochre);border-radius:4px;padding:4px 10px;margin-bottom:18px}
-  /* how-to-read callouts */
-  .reads{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;padding:44px 0 6px;border-top:1px solid var(--ink);margin-top:44px}
-  .read{border-top:2px solid var(--ink);padding-top:16px}
-  .read .n{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.14em;color:var(--teal);display:block;margin-bottom:8px}
-  .read h3{font-size:1.02rem;font-weight:700;margin-bottom:8px}
-  .read p{color:var(--ink2);font-size:.92rem}
-  /* CTA band */
-  .cta{margin:56px 0 0;color:#D8E2DD;padding:38px;background:var(--dark);border-radius:6px;display:flex;justify-content:space-between;gap:26px;align-items:center;flex-wrap:wrap}
-  .cta h2{font-family:var(--display);font-weight:500;font-style:italic;font-size:1.5rem;color:#F4F1E8;max-width:16em}
-  .btn{display:inline-block;background:var(--teal);color:#FCFAF5;text-decoration:none;font-weight:600;font-size:.98rem;padding:13px 22px;border-radius:5px;white-space:nowrap}
-  .btn:hover{background:var(--teal-deep)}
-  /* footer */
-  footer{margin-top:70px;border-top:1px solid var(--ink);padding:26px 0 56px;position:relative}
-  footer::before{content:"";position:absolute;left:0;right:0;top:3px;height:1px;background:var(--ink);opacity:.35}
-  footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:baseline}
-  .colo{font-family:var(--mono);font-size:.78rem;color:var(--ink2);line-height:2}
-  .colo b{color:var(--ink);font-weight:600}.colo a{color:var(--teal);text-decoration:none}
-  .legal{max-width:40em;font-size:.74rem;color:var(--ink2);font-family:var(--mono);line-height:1.8;text-align:right}
-  @media (max-width:820px){.reads{grid-template-columns:1fr;gap:26px}.target{grid-template-columns:auto 1fr;gap:14px}.target .amt{grid-column:2;text-align:left}.legal{text-align:left}}
+:root{--bg:#F7FAF9;--ink:#132321;--mut:#5D7672;--pine:#0E5E52;--pine-d:#0A4038;--clay:#D96B4A;--clay-d:#C05436;--gold:#D9A441;--sand:#EDF4F1;--mint:#DFF3EA;--sky:#DFEEF3;--blue:#1F6F8B;--card:#FFFFFF;--line:#DCE6E1}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 "IBM Plex Sans",Sora,Poppins,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.mono{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+::selection{background:rgba(217,107,74,.25)}
+nav{position:sticky;top:14px;z-index:60}
+.nav-in{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;height:60px;padding:0 12px 0 24px;box-shadow:0 8px 30px rgba(23,43,40,.08)}
+.logo{display:flex;align-items:center;gap:10px;white-space:nowrap;font-weight:800;font-size:16.5px;letter-spacing:-.02em;text-decoration:none;color:inherit}
+.logo .mark{width:30px;height:30px;border-radius:8px;transition:transform .25s}
+.logo:hover .mark{transform:rotate(-6deg) scale(1.06)}
+.logo b{color:var(--pine)}
+.nav-in a:not(.logo){color:var(--mut);text-decoration:none;font-size:14px;font-weight:500;position:relative;white-space:nowrap}
+.nav-in a:not(.logo):not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--clay);transition:width .2s}
+.nav-in a:not(.logo):not(.nav-cta):hover{color:var(--ink)}
+.nav-in a:not(.logo):not(.nav-cta):hover::after{width:100%}
+.nav-cta{margin-left:auto;background:var(--pine);color:#fff!important;font-weight:600;padding:11px 20px;border-radius:999px;transition:transform .15s,box-shadow .15s,background .15s}
+.nav-cta:hover{transform:scale(1.04);box-shadow:0 10px 26px rgba(14,94,82,.35);background:var(--pine-d)}
+.kick{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--pine);font-size:12.5px;font-weight:600;border-radius:999px;padding:7px 15px;border:1px solid #C8E4D6}
+.kick i{width:7px;height:7px;border-radius:50%;background:var(--pine);animation:blink 2.2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+h1{text-wrap:balance;font-size:clamp(34px,4.2vw,52px);line-height:1.07;letter-spacing:-.033em;font-weight:800;margin-top:20px}
+h1 em{font-style:normal;color:var(--clay)}
+.sub{color:var(--mut);font-size:16.5px;margin-top:16px;max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:14px;padding:15px 24px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .16s,box-shadow .16s}
+.btn-p{background:var(--clay);color:#fff;box-shadow:0 10px 26px rgba(217,107,74,.32)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(217,107,74,.45)}
+.btn-s{background:var(--card);border:1.5px solid var(--line);color:var(--ink)}
+.btn-s:hover{border-color:var(--pine);color:var(--pine)}
+.page-hero{padding:56px 0 40px}
+.sec-kick{display:block;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--clay);font-weight:600}
+.rev{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.rev.in{opacity:1;transform:none}
+.cta-band{margin:62px 0}
+.cta-in{background:linear-gradient(120deg,#0E5E52,#0A403A 70%);border-radius:16px;padding:50px 36px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.cta-in::before{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.1);width:300px;height:300px;top:-140px;left:-80px}
+.cta-in::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.1);width:220px;height:220px;bottom:-110px;right:-60px}
+.cta-in h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.03em;text-wrap:balance}
+.cta-in p{margin:14px auto 0;max-width:56ch;color:#C3DCD3;font-size:15.5px}
+.cta-in .btn{background:var(--clay);color:#fff;margin-top:26px;font-size:16px;padding:16px 30px}
+.cta-in .btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 18px 44px rgba(0,0,0,.28)}
+footer{border-top:1px solid var(--line);padding:26px 0 34px}
+.f-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--mut);font-size:13px;align-items:center}
+.f-in a{color:var(--pine);text-decoration:none}
+.legal{margin-top:12px;font-size:11.5px;color:#93A5A0;max-width:90ch}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+.report{background:#FFFFFF;border:1.5px solid #D5E0DA;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(19,35,33,.1);margin-top:34px}
+.rp-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;background:#F0F6F3;border-bottom:2px solid var(--pine);padding:12px 24px;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#4A5F5B}
+.rp-body{padding:28px 30px}
+.headline{display:flex;gap:26px;align-items:baseline;flex-wrap:wrap}
+.headline .big{font-size:clamp(36px,4.5vw,52px);font-weight:800;letter-spacing:-.04em;color:var(--pine);font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace}
+.headline p{color:var(--mut);font-size:14.5px;max-width:52ch}
+.rp-cap{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#4A5F5B;margin:26px 0 10px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;border:1.5px solid #D5E0DA}
+th{text-align:left;background:#0E5E52;color:#EDF4F0;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:10px 13px;border-bottom:2.5px solid var(--gold)}
+th+th,td+td{border-left:1px solid #E4EBE6}
+td{padding:11px 13px;border-top:1px solid #EAF0EB;vertical-align:middle}
+tbody tr:nth-child(even) td{background:#F7FAF7}
+td.r,th.r{text-align:right}
+td.r{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace}
+tr.tot td{font-weight:700;background:#F0F6F3!important;border-top:2px solid #CBDCD3}
+.rec{color:var(--pine);font-weight:700}
+.den{color:var(--clay-d);font-weight:600}
+.targets{display:grid;gap:11px;margin-top:6px}
+.tg{display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;background:#FBFDFC;border:1.5px solid #E0E9E3;border-radius:12px;padding:15px 18px;transition:transform .18s,box-shadow .18s}
+.tg:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(19,35,33,.09)}
+.tg .rk{width:36px;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-weight:700;font-size:14px}
+.tg:nth-child(-n+3) .rk{background:var(--gold);color:#3D2E0A}
+.tg:nth-child(n+4) .rk{background:var(--mint);color:var(--pine)}
+.tg h5{font-size:14px;font-weight:700}
+.tg h5 span{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-weight:500;font-size:11px;color:var(--mut)}
+.tg p{font-size:12.5px;color:var(--mut);margin-top:3px}
+.tg .stake{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-weight:700;color:var(--clay-d);font-size:15px;white-space:nowrap}
+.rp-foot{border-top:1px dashed #D9E3DC;padding:12px 24px;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#8AA099}
+.how3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.h3c{background:#FFFFFF;border:1.5px solid var(--line);border-radius:12px;padding:22px}
+.h3c .k{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);font-weight:600}
+.h3c h4{font-size:15.5px;font-weight:700;margin-top:8px}
+.h3c p{font-size:13.5px;color:var(--mut);margin-top:5px}
+.dl{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+@media(max-width:900px){.how3{grid-template-columns:1fr}.tg{grid-template-columns:36px 1fr}.tg .stake{grid-column:2}}
 </style>
 </head>
 <body>
-<header class="wrap">
-  <div class="bar">
-    <a class="wordmark" href="/">Intelli-<i>HealthCare</i></a>
-    <nav class="top" aria-label="Site">
-      <a href="/#how">How it works</a>
-      <a href="/sample.html" aria-current="page">Sample analysis</a>
-      <a href="/security.html">Security</a>
-      <a class="navdemo" href="https://app.intelli-healthcare.com" target="_blank" rel="noopener">Live demo ↗</a>
-      <a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a>
-    </nav>
-  </div>
+<div class="wrap"><nav><div class="nav-in">
+  <a class="logo" href="/"><svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#132E33"/><path d="M15 38h9l5-12 7 20 6-14 4 6h8" fill="none" stroke="#F7F4EE" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Intelli-<b>HealthCare</b></span></a>
+  <a href="/#how">How it works</a><a href="/#calc">Calculator</a><a href="/#intel">Intelligence</a><a href="/#film">Tour</a><a href="/sample.html">Sample</a><a href="/security.html">Security</a><a href="https://app.intelli-healthcare.com" target="_blank" rel="noopener">Live platform ↗</a>
+  <a class="nav-cta" href="mailto:admin@intelli-healthcare.com?subject=Free%2048-hour%20denial%20analysis">Get the free analysis</a>
+</div></nav></div>
+<header class="wrap page-hero">
+  <span class="kick"><i></i>What you get back in 48 hours</span>
+  <h1>This is the report. <em>Yours, free, on your own numbers.</em></h1>
+  <p class="sub">Below is a real Denial Opportunity Analysis — the exact deliverable we return within two business days of receiving your 835 files. This one runs on synthetic data so we can show it publicly; yours runs on your practice's actual remittances.</p>
 </header>
 
-<main class="wrap">
-  <section class="lede">
-    <p class="eyebrow">What you get back in 48 hours</p>
-    <h1>This is the report. <em>Yours, on your own numbers, free.</em></h1>
-    <p class="sub">Below is a real Denial Opportunity Analysis — the exact deliverable we return within two
-    business days of receiving your 835 files. This one runs on synthetic data so we can show it publicly;
-    yours runs on your practice's actual remittances.</p>
-  </section>
-
-  <div class="report" aria-label="Sample Denial Opportunity Analysis">
-    <div class="rhead"><b>Denial Opportunity Analysis</b><span>Sample · synthetic data</span></div>
-    <div class="rbody">
-      <span class="synthetic">Illustrative — not a real practice</span>
+<div class="wrap">
+  <div class="report rev">
+    <div class="rp-head"><span>Denial Opportunity Analysis</span><span>Sample · synthetic data · illustrative — not a real practice</span></div>
+    <div class="rp-body">
       <div class="headline">
-        <b>$7,100</b>
-        <small>estimated recoverable across <b style="color:var(--ink);font-size:inherit;font-family:inherit">4 denied claims</b> totaling $11,950 denied — every dollar of it appealable. Recovery estimate is calibrated per payer and denial category from recorded appeal outcomes.</small>
+        <span class="big">$7,100</span>
+        <p><b>estimated recoverable</b> across 4 denied claims totaling $11,950 denied — every dollar of it appealable. The estimate is calibrated per payer and denial category from recorded appeal outcomes.</p>
       </div>
 
-      <h2 class="blk">Denied dollars by payer</h2>
+      <div class="rp-cap">Denied dollars by payer</div>
       <table>
-        <thead><tr><th>Payer</th><th>Claims</th><th>Denied</th><th>Appealable</th><th>Est. recovery</th></tr></thead>
+        <thead><tr><th>Payer</th><th class="r">Claims</th><th class="r">Denied</th><th class="r">Appealable</th><th class="r">Est. recovery</th></tr></thead>
         <tbody>
-          <tr><td>National HMO Plan</td><td>2</td><td>$6,050</td><td>$6,050</td><td class="rec">$3,600</td></tr>
-          <tr><td>Regional Blue PPO</td><td>2</td><td>$5,900</td><td>$5,900</td><td class="rec">$3,500</td></tr>
-        </tbody>
-        <tfoot><tr><td>Total</td><td>4</td><td>$11,950</td><td>$11,950</td><td class="rec">$7,100</td></tr></tfoot>
-      </table>
-
-      <h2 class="blk">Denied dollars by category</h2>
-      <table>
-        <thead><tr><th>Category</th><th>Claims</th><th>Denied</th><th>Appealable</th><th>Est. recovery</th></tr></thead>
-        <tbody>
-          <tr><td>Medical necessity</td><td>2</td><td>$7,700</td><td>$7,700</td><td class="rec">$4,700</td></tr>
-          <tr><td>Prior authorization</td><td>2</td><td>$4,250</td><td>$4,250</td><td class="rec">$2,400</td></tr>
+          <tr><td>National HMO Plan</td><td class="r">2</td><td class="r den">$6,050</td><td class="r">$6,050</td><td class="r rec">$3,600</td></tr>
+          <tr><td>Regional Blue PPO</td><td class="r">2</td><td class="r den">$5,900</td><td class="r">$5,900</td><td class="r rec">$3,500</td></tr>
+          <tr class="tot"><td>Total</td><td class="r">4</td><td class="r den">$11,950</td><td class="r">$11,950</td><td class="r rec">$7,100</td></tr>
         </tbody>
       </table>
 
-      <h2 class="blk">Highest-value appeal targets</h2>
-      <div class="target">
-        <div class="rk">1</div>
-        <div><div class="meta">National HMO · CARC&nbsp;50 · <span class="cat">medical necessity</span> · acct ACT-102</div>
-          <div class="mv">Clinical appeal mapping documentation to the payer's own medical-policy criteria — the strongest overturn class.</div></div>
-        <div class="amt"><b>$4,200</b><small>at stake</small></div>
-      </div>
-      <div class="target">
-        <div class="rk">2</div>
-        <div><div class="meta">Regional Blue PPO · CARC&nbsp;50 · <span class="cat">medical necessity</span> · acct RB-118</div>
-          <div class="mv">Clinical appeal citing the documented failed conservative-treatment trial before the ordered service.</div></div>
-        <div class="amt"><b>$3,500</b><small>at stake</small></div>
-      </div>
-      <div class="target">
-        <div class="rk">3</div>
-        <div><div class="meta">Regional Blue PPO · CARC&nbsp;197 · <span class="cat">authorization</span> · acct RB-091</div>
-          <div class="mv">Retro-authorization request, or appeal citing urgent/emergent circumstances or payer notification failure.</div></div>
-        <div class="amt"><b>$2,400</b><small>at stake</small></div>
-      </div>
-      <div class="target">
-        <div class="rk">4</div>
-        <div><div class="meta">National HMO · CARC&nbsp;197 · <span class="cat">authorization</span> · acct ACT-101</div>
-          <div class="mv">Retro-authorization request, or appeal citing urgent/emergent circumstances or payer notification failure.</div></div>
-        <div class="amt"><b>$1,850</b><small>at stake</small></div>
+      <div class="rp-cap">Denied dollars by category</div>
+      <table>
+        <thead><tr><th>Category</th><th class="r">Claims</th><th class="r">Denied</th><th class="r">Appealable</th><th class="r">Est. recovery</th></tr></thead>
+        <tbody>
+          <tr><td>Medical necessity</td><td class="r">2</td><td class="r den">$7,700</td><td class="r">$7,700</td><td class="r rec">$4,700</td></tr>
+          <tr><td>Prior authorization</td><td class="r">2</td><td class="r den">$4,250</td><td class="r">$4,250</td><td class="r rec">$2,400</td></tr>
+        </tbody>
+      </table>
+
+      <div class="rp-cap">Highest-value appeal targets</div>
+      <div class="targets">
+        <div class="tg"><span class="rk">1</span><div><h5>National HMO · CARC 50 · medical necessity <span>· acct ACT-102</span></h5><p>Clinical appeal mapping documentation to the payer's own medical-policy criteria — the strongest overturn class.</p></div><span class="stake">$4,200</span></div>
+        <div class="tg"><span class="rk">2</span><div><h5>Regional Blue PPO · CARC 50 · medical necessity <span>· acct RB-118</span></h5><p>Clinical appeal citing the documented failed conservative-treatment trial before the ordered service.</p></div><span class="stake">$3,500</span></div>
+        <div class="tg"><span class="rk">3</span><div><h5>Regional Blue PPO · CARC 197 · authorization <span>· acct RB-091</span></h5><p>Retro-authorization request, or appeal citing urgent/emergent circumstances or payer notification failure.</p></div><span class="stake">$2,400</span></div>
+        <div class="tg"><span class="rk">4</span><div><h5>National HMO · CARC 197 · authorization <span>· acct ACT-101</span></h5><p>Retro-authorization request, or appeal citing urgent/emergent circumstances or payer notification failure.</p></div><span class="stake">$1,850</span></div>
       </div>
     </div>
-    <div class="rfoot">Prepared by Intelli-HealthCare · synthetic sample · every figure above is read directly from the 835 remittance files — the only thing we need to produce this for your practice.</div>
+    <div class="rp-foot">Prepared by Intelli-HealthCare · synthetic sample · every figure above is read directly from the 835 remittance files — the only thing we need to produce this for your practice.</div>
   </div>
 
-  <section class="reads">
-    <div class="read"><span class="n">How to read it</span><h3>The recoverable number</h3><p>Not "denied dollars" — the portion our engine estimates you can actually win back, calibrated from real appeal outcomes by payer and denial reason.</p></div>
-    <div class="read"><span class="n">How to read it</span><h3>Ranked, not listed</h3><p>Targets are ordered by expected value — the odds of overturning times the dollars at stake — so the first hour of work goes to the most recoverable money.</p></div>
-    <div class="read"><span class="n">How to read it</span><h3>Every next move named</h3><p>Each target comes with the specific argument we'd make. Nothing is a black box; your team sees exactly what would be filed and why.</p></div>
-  </section>
-
-  <div class="cta">
-    <h2>Want this on your practice's real numbers?</h2>
-    <a class="btn" href="mailto:admin@intelli-healthcare.com?subject=Free%2048-hour%20denial%20analysis%20-%20%5BPractice%20name%5D&body=We%27d%20like%20the%20free%20analysis.%20Practice%3A%20%5Bname%5D%2C%20specialty%3A%20%5Bspecialty%5D.">Request your free analysis</a>
+  <div class="how3">
+    <div class="h3c rev"><span class="k">How to read it</span><h4>The recoverable number</h4><p>Not "denied dollars" — the portion our engine estimates you can actually win back, calibrated from real appeal outcomes by payer and denial reason.</p></div>
+    <div class="h3c rev"><span class="k">How to read it</span><h4>Ranked, not listed</h4><p>Targets are ordered by expected value — the odds of overturning times the dollars at stake — so the first hour of work goes to the most recoverable money.</p></div>
+    <div class="h3c rev"><span class="k">How to read it</span><h4>Every next move named</h4><p>Each target comes with the specific argument we'd make. Nothing is a black box; your team sees exactly what would be filed and why.</p></div>
   </div>
-</main>
 
-<footer>
-  <div class="wrap">
-    <div class="colo">
-      <div><b>Intelli-HealthCare</b> · Serving specialty practices nationwide</div>
-      <div><a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a> · <a href="/security.html">Security &amp; PHI</a></div>
-    </div>
-    <p class="legal">© 2026 Intelli-HealthCare. Sample uses synthetic data. Recovery estimates are directional
-    planning figures, not guarantees, and nothing here is legal or billing-compliance advice.</p>
+  <div class="dl">
+    <a class="btn btn-s" href="/sample-denial-analysis.pdf" target="_blank" rel="noopener">⬇ Download this analysis (PDF)</a>
+    <a class="btn btn-s" href="/sample-filing-packet.pdf" target="_blank" rel="noopener">⬇ Download a sample filing packet (PDF)</a>
   </div>
-</footer>
+</div>
+<div class="wrap cta-band"><div class="cta-in">
+  <h2>Find out what you're owed before you decide anything.</h2>
+  <p>Send one 835 export. Get a ranked, client-ready denial analysis back in 48 business hours — free, and yours to keep even if we never speak again.</p>
+  <a class="btn" href="mailto:admin@intelli-healthcare.com?subject=Free%2048-hour%20denial%20analysis">Request the free 48-hour analysis</a>
+</div></div><footer><div class="wrap">
+  <div class="f-in">
+    <span style="display:inline-flex;align-items:center;gap:9px"><svg class="mark" style="width:22px;height:22px;border-radius:6px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#132E33"/><path d="M15 38h9l5-12 7 20 6-14 4 6h8" fill="none" stroke="#F7F4EE" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b style="color:var(--ink)">Intelli-HealthCare</b> · Serving specialty practices nationwide</span>
+    <span><a href="/sample.html">Sample analysis</a> · <a href="/security.html">Security &amp; PHI</a> · <a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a></span>
+  </div>
+  <p class="legal">© 2026 Intelli-HealthCare. Recovery estimates are directional planning figures, not a guarantee; results vary by payer and case mix. The linked environment contains synthetic data only. A BAA is executed before any PHI is exchanged.</p>
+</div></footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rev').forEach((c,i)=>{c.style.transitionDelay=((i%4)*70)+'ms';io.observe(c)});
+setTimeout(()=>document.querySelectorAll('.rev').forEach(el=>el.classList.add('in')),2400);
+</script>
 </body>
 </html>

@@ -1,23 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<!-- IH-BUILD-12 · 2026-07-23 · demo film src → /Intelli-HealthCare.mp4 (clean filename) · design=editorial-ledger · if you can read this in view-source, the deployed file is current -->
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Intelli-HealthCare — denial appeals for specialty practices</title>
-<meta property="og:title" content="Intelli-HealthCare — denial appeals for specialty practices">
-<meta property="og:description" content="Free 48-hour denial analysis: we read your 835s, show what's recoverable, and draft appeals your staff approves.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://intelli-healthcare.com/">
-<meta property="og:image" content="https://intelli-healthcare.com/og.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="We read your 835 remittance files, find the denials worth fighting, and draft evidence-cited appeals your staff approves. Free 48-hour denial analysis. Serving specialty practices nationwide.">
+<meta name="description" content="We read your 835s, rank what's recoverable, and draft cited appeals your staff approves. Fee: 15% of recoveries only.">
 <link rel="canonical" href="https://intelli-healthcare.com/">
-<meta name="theme-color" content="#132E33">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23132E33'/%3E%3Cpath d='M15 38h9l5-12 7 20 6-14 4 6h8' fill='none' stroke='%23F7F4EE' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta property="og:title" content="Intelli-HealthCare — denial appeals for specialty practices">
+<meta property="og:description" content="We read your 835s, rank what's recoverable, and draft cited appeals your staff approves. Fee: 15% of recoveries only.">
+<meta property="og:image" content="https://intelli-healthcare.com/og.jpg">
+<meta property="og:url" content="https://intelli-healthcare.com/">
+<meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Intelli-HealthCare",
 "url":"https://intelli-healthcare.com/","email":"admin@intelli-healthcare.com",
@@ -25,291 +18,492 @@
 "address":{"@type":"PostalAddress","addressCountry":"US"},
 "areaServed":"US"}
 </script>
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="12" fill="%23132E33"/><path d="M15 38h9l5-12 7 20 6-14 4 6h8" fill="none" stroke="%23F7F4EE" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#F7F4EE;       /* warm ivory */
-    --doc:#FFFDF8;         /* document white */
-    --ink:#16333A;         /* deep teal-ink */
-    --ink2:#51696C;        /* muted */
-    --hair:#DCD4C4;        /* warm hairline */
-    --hair2:#C9BFA9;       /* stronger rule */
-    --teal:#0E5E63;        /* single accent */
-    --teal-deep:#0A474B;
-    --brick:#A6402A;       /* denial */
-    --pine:#1D6B52;        /* recovery */
-    --ochre:#8F6400;       /* fee */
-    --dark:#10282D;        /* one dark band */
-    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-    --body:"Public Sans",system-ui,-apple-system,sans-serif;
-    --display:"Fraunces",Georgia,serif;
-  }
-  *{box-sizing:border-box;margin:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16.5px;
-       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  ::selection{background:var(--teal);color:var(--paper)}
-  a{color:var(--teal)}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
-  .wrap{max-width:1104px;margin:0 auto;padding:0 24px}
-  .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);
-        font-weight:600;padding:10px 16px;z-index:99}
-  .skip:focus{left:0}
-
-  /* ---------- masthead: ledger double-rule ---------- */
-  header{padding:30px 0 0}
-  .bar{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
-       padding-bottom:14px;border-bottom:1px solid var(--ink);position:relative}
-  .bar::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--ink);opacity:.35}
-  .wordmark{font-family:var(--display);font-weight:600;font-size:1.28rem;letter-spacing:.005em;
-            color:var(--ink);text-decoration:none}
-  .wordmark i{font-style:normal;color:var(--teal)}
-  nav.top{display:flex;gap:28px;align-items:baseline;flex-wrap:wrap}
-  nav.top a{font-family:var(--mono);font-size:.78rem;letter-spacing:.02em;color:var(--ink2);text-decoration:none}
-  nav.top a:hover{color:var(--teal);text-decoration:underline;text-underline-offset:4px}
-  nav.top a.navdemo{color:var(--teal);font-weight:600}
-
-  /* ---------- hero ---------- */
-  .hero{display:grid;grid-template-columns:1.06fr .94fr;gap:64px;align-items:start;padding:72px 0 78px}
-  .eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;
-           letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);margin-bottom:22px}
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--hair2);flex:none}
-  h1{font-family:var(--display);font-weight:600;font-size:clamp(2.35rem,4.9vw,3.55rem);line-height:1.06;
-     letter-spacing:-.014em;margin-bottom:22px;text-wrap:balance}
-  h1 em{font-style:italic;font-weight:500;color:var(--teal)}
-  .sub{color:var(--ink2);max-width:33em;margin-bottom:30px;font-size:1.04rem}
-  .cta-row{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-  .btn{display:inline-block;background:var(--teal);color:#FCFAF5;text-decoration:none;font-weight:600;
-       font-size:.98rem;padding:13px 22px;border-radius:5px;letter-spacing:.005em}
-  .btn:hover{background:var(--teal-deep)}
-  .btn:active{transform:translateY(1px)}
-  .quiet{font-family:var(--mono);font-size:.85rem;font-weight:500;color:var(--ink);text-decoration:none;
-         border-bottom:1px solid var(--hair2);padding-bottom:3px}
-  .quiet:hover{color:var(--teal);border-color:var(--teal)}
-  .fine{font-size:.8rem;color:var(--ink2);margin-top:16px;max-width:36em}
-
-  /* ---------- the remittance excerpt (hero document) ---------- */
-  .doc{background:var(--doc);border:1px solid var(--hair2);border-radius:6px;
-       box-shadow:0 1px 0 rgba(22,51,58,.04),0 30px 50px -38px rgba(22,51,58,.45)}
-  .doc-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
-            padding:14px 20px;border-bottom:1px solid var(--hair)}
-  .doc-head b{font-family:var(--mono);font-weight:600;font-size:.72rem;letter-spacing:.14em;
-              text-transform:uppercase;color:var(--ink)}
-  .doc-head span{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
-  .entry{padding:16px 20px}
-  .entry + .entry{border-top:1px solid var(--hair)}
-  .entry-line{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-  .stamp{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-         display:inline-flex;align-items:center;gap:8px}
-  .stamp::before{content:"";width:7px;height:7px;flex:none}
-  .stamp.d{color:var(--brick)} .stamp.d::before{background:var(--brick)}
-  .stamp.n{color:var(--ink2)}  .stamp.n::before{background:var(--hair2)}
-  .stamp.r{color:var(--pine)}  .stamp.r::before{background:var(--pine)}
-  .amt{font-family:var(--mono);font-weight:600;font-size:1.02rem;font-variant-numeric:tabular-nums;white-space:nowrap}
-  .amt.neg{color:var(--brick)} .amt.pos{color:var(--pine)}
-  .entry p{font-size:.92rem;color:var(--ink);margin-top:8px;line-height:1.55}
-  .entry p .lift{color:var(--ink2)}
-  .doc-foot{padding:13px 20px 15px;border-top:1px solid var(--hair);background:rgba(220,212,196,.18);
-            border-radius:0 0 6px 6px;font-size:.8rem;color:var(--ink2);line-height:1.55}
-
-  /* ---------- figures row: hairline-ruled, no cards ---------- */
-  .figures{border-top:1px solid var(--ink);border-bottom:1px solid var(--hair2)}
-  .figures .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-  .fig{padding:30px 28px 26px}
-  .fig + .fig{border-left:1px solid var(--hair)}
-  .fig:first-child{padding-left:2px}
-  .fig b{display:block;font-family:var(--display);font-weight:500;font-size:2.7rem;line-height:1;
-         letter-spacing:-.01em;font-variant-numeric:tabular-nums}
-  .fig.win b{color:var(--pine)} .fig.gap b{color:var(--brick)} .fig.fee b{color:var(--ochre)}
-  .fig b sup{font-size:.85rem;font-family:var(--mono);font-weight:400;color:var(--ink2);letter-spacing:0}
-  .fig small{display:block;color:var(--ink2);font-size:.86rem;line-height:1.5;margin-top:10px;max-width:19em}
-  .attr{font-family:var(--mono);font-size:.68rem;color:var(--ink2);padding:10px 2px 0;letter-spacing:.02em}
-  .attr::before{content:"1  ";font-size:.62rem;vertical-align:super}
-
-  /* ---------- demo film ---------- */
-  section.film-sec{padding:74px 0 0}
-  .film{background:var(--doc);border:1px solid var(--hair2);border-radius:6px;padding:10px;
-        box-shadow:0 1px 0 rgba(22,51,58,.04),0 30px 50px -38px rgba(22,51,58,.45)}
-  .film video{display:block;width:100%;border-radius:3px;background:var(--dark)}
-  .film-cap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:12px 6px 2px;
-            font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--ink2)}
-
-  /* ---------- how it works: ruled columns, no boxes ---------- */
-  section.how{padding:78px 0 8px}
-  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:34px}
-  h2.section{font-family:var(--display);font-weight:600;font-size:1.85rem;letter-spacing:-.008em;white-space:nowrap}
-  .sec-head::after{content:"";height:1px;background:var(--hair2);flex:1;transform:translateY(-6px)}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
-  .step{border-top:2px solid var(--ink);padding-top:18px}
-  .step .n{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.14em;color:var(--teal);
-           display:block;margin-bottom:10px}
-  .step h3{font-size:1.06rem;font-weight:700;line-height:1.4;margin-bottom:10px;letter-spacing:-.005em}
-  .step p{color:var(--ink2);font-size:.93rem}
-
-  /* ---------- the one dark band ---------- */
-  .trust{margin:74px 0 0;color:#D8E2DD;padding:40px 38px 42px;background:var(--dark);border-radius:6px}
-  .trust h2{font-family:var(--display);font-weight:500;font-style:italic;font-size:1.7rem;
-            letter-spacing:-.005em;color:#F4F1E8;margin-bottom:14px}
-  .trust p{color:#B9C9C3;max-width:60em;font-size:.97rem}
-  .trust b{color:#E3B664;font-weight:600}
-
-  /* ---------- colophon ---------- */
-  footer{margin-top:84px;border-top:1px solid var(--ink);padding:26px 0 56px;position:relative}
-  footer::before{content:"";position:absolute;left:0;right:0;top:3px;height:1px;background:var(--ink);opacity:.35}
-  footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:baseline}
-  .colo{font-family:var(--mono);font-size:.78rem;color:var(--ink2);line-height:2}
-  .colo b{color:var(--ink);font-weight:600}
-  .colo a{color:var(--teal);text-decoration:none}
-  .colo a:hover{text-decoration:underline;text-underline-offset:4px}
-  .legal{max-width:44em;font-size:.74rem;color:var(--ink2);font-family:var(--mono);line-height:1.8;text-align:right}
-
-  /* ---------- motion: one quiet entrance; base fully visible ---------- */
-  @media (prefers-reduced-motion: no-preference){
-    .hero-copy{opacity:0;transform:translateY(6px);animation:settle .5s .05s forwards}
-    .doc{opacity:0;transform:translateY(8px);animation:settle .55s .2s forwards}
-    .btn,.quiet,.step,nav.top a{transition:color .15s ease,background .15s ease,border-color .15s ease}
-    @keyframes settle{to{opacity:1;transform:none}}
-  }
-  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
-
-  @media (max-width:920px){
-    .hero{grid-template-columns:1fr;gap:44px;padding:52px 0 60px}
-    .figures .wrap{grid-template-columns:1fr}
-    .fig{padding:22px 2px}
-    .fig + .fig{border-left:0;border-top:1px solid var(--hair)}
-    .steps{grid-template-columns:1fr;gap:30px}
-    .sec-head::after{display:none}
-  }
-  @media (max-width:560px){
-    body{font-size:16px}
-    .cta-row{align-items:stretch}
-    .btn{text-align:center;flex:1 1 100%}
-    .quiet{align-self:center}
-    .trust{padding:30px 24px;margin-top:60px}
-    .legal{text-align:left}
-  }
+:root{
+  --bg:#F7FAF9; --ink:#132321; --mut:#5D7672; --pine:#0E5E52; --pine-d:#0A4038;
+  --clay:#D96B4A; --clay-d:#C05436; --gold:#D9A441; --sand:#EDF4F1; --mint:#DFF3EA;
+  --sky:#DFEEF3; --blue:#1F6F8B; --card:#FFFFFF; --line:#DCE6E1;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 "IBM Plex Sans",Sora,Poppins,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.mono{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+::selection{background:rgba(217,107,74,.25)}
+/* scroll progress */
+#prog{position:fixed;top:0;left:0;height:3.5px;width:0;background:linear-gradient(90deg,var(--clay),var(--gold),var(--pine));z-index:100;border-radius:0 99px 99px 0}
+/* aurora field */
+.aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.aurora i{position:absolute;border-radius:50%;filter:blur(74px);opacity:.42;animation:drift 16s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:520px;height:520px;background:#DFF0EA;top:-160px;left:-120px}
+.aurora i:nth-child(2){width:460px;height:460px;background:#DFF3EA;top:-80px;right:-140px;animation-delay:-5s}
+.aurora i:nth-child(3){width:380px;height:380px;background:#E3EEF3;bottom:-180px;left:34%;animation-delay:-9s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(48px,30px) scale(1.12)}}
+/* nav */
+nav{position:sticky;top:14px;z-index:60}
+.nav-in{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;height:60px;padding:0 12px 0 24px;box-shadow:0 8px 30px rgba(23,43,40,.08)}
+.logo{display:flex;align-items:center;gap:10px;white-space:nowrap;font-weight:800;font-size:16.5px;letter-spacing:-.02em}
+.logo .mark{width:30px;height:30px;border-radius:8px;transition:transform .25s}
+.logo:hover .mark{transform:rotate(-6deg) scale(1.06)}
+.logo b{color:var(--pine)}
+.nav-in a{color:var(--mut);text-decoration:none;font-size:14px;font-weight:500;position:relative;white-space:nowrap}
+.nav-in a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--clay);transition:width .2s}
+.nav-in a:not(.nav-cta):hover{color:var(--ink)}
+.nav-in a:not(.nav-cta):hover::after{width:100%}
+.nav-cta{margin-left:auto;background:var(--pine);color:#fff!important;font-weight:600;padding:11px 20px;border-radius:999px;transition:transform .15s,box-shadow .15s,background .15s}
+.nav-cta:hover{transform:scale(1.04);box-shadow:0 10px 26px rgba(14,94,82,.35);background:var(--pine-d)}
+/* hero */
+.hero-sec{position:relative}
+.hero{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:54px 0 46px}
+.kick{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--pine);font-size:12.5px;font-weight:600;border-radius:999px;padding:7px 15px;border:1px solid #C8E4D6}
+.kick i{width:7px;height:7px;border-radius:50%;background:var(--pine);animation:blink 2.2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+h1{text-wrap:balance;font-size:clamp(38px,4.9vw,60px);line-height:1.05;letter-spacing:-.035em;font-weight:800;margin-top:22px}
+h1 em{font-style:normal;color:var(--clay);position:relative;white-space:nowrap}
+h1 em svg{position:absolute;left:0;bottom:-8px;width:100%;height:12px}
+h1 em path{stroke:var(--clay);stroke-width:3.4;fill:none;stroke-linecap:round;stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1s .5s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sub{color:var(--mut);font-size:17px;margin-top:16px;max-width:52ch}
+.ctas{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:14px;padding:15px 24px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .16s,box-shadow .16s;will-change:transform}
+.btn-p{background:var(--clay);color:#fff;box-shadow:0 10px 26px rgba(217,107,74,.32)}
+.btn-p:hover{box-shadow:0 16px 40px rgba(217,107,74,.45)}
+.btn-s{background:var(--card);border:1.5px solid var(--line);color:var(--ink)}
+.btn-s:hover{border-color:var(--pine);color:var(--pine)}
+.trust{display:flex;gap:16px;margin-top:20px;color:var(--mut);font-size:12.5px;flex-wrap:wrap}
+.trust span{display:flex;align-items:center;gap:6px}
+.trust b{color:var(--pine)}
+/* claim journey */
+.journey{position:relative;display:grid;gap:13px;perspective:900px}
+.jcard{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:17px 20px;box-shadow:0 14px 40px rgba(23,43,40,.08);opacity:0;transform:translateY(18px);transition:opacity .55s,transform .35s;will-change:transform}
+.jcard.in{opacity:1;transform:none}
+.jcard .cap{display:flex;justify-content:space-between;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.jcard h5{font-size:15px;font-weight:600;margin-top:6px}
+.jcard p{font-size:13px;color:var(--mut);margin-top:3px}
+.jcard.deny{border-left:5px solid var(--clay)}
+.jcard.deny .amt{color:var(--clay)}
+.jcard.appeal{border-left:5px solid var(--gold);margin-left:26px}
+.jcard.paid{border-left:5px solid var(--pine);margin-left:52px;background:linear-gradient(180deg,#FFFFFF,#F2FAF6);position:relative;overflow:hidden}
+.jcard.paid .amt{color:var(--pine)}
+.jcard.paid::after{content:"";position:absolute;top:-40%;left:-60%;width:60%;height:180%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-18deg);animation:sheen 4.2s 2.2s ease-in-out infinite}
+@keyframes sheen{0%{left:-60%}22%{left:130%}100%{left:130%}}
+.amt{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-weight:700;font-size:16px}
+.connector{width:2px;height:13px;background:var(--line);margin-left:40px}
+.jfoot{font-size:11.5px;color:var(--mut);margin-top:2px;padding-left:6px}
+/* brand tiles (typographic — official marks slot in when licensed) */
+.btile{display:inline-flex;align-items:center;justify-content:center;height:52px;margin:0 10px;padding:0 26px;background:#FFFFFF;border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 8px rgba(19,35,33,.04);filter:grayscale(.55);opacity:.82;transition:filter .25s,opacity .25s,transform .25s,box-shadow .25s;vertical-align:middle}
+.btile:hover{filter:none;opacity:1;transform:translateY(-2px);box-shadow:0 8px 20px rgba(19,35,33,.1)}
+.btile b{font-weight:700;white-space:nowrap;letter-spacing:-.01em}
+.lg-uhc{color:#002677;font-size:16.5px}
+.lg-uhc span{font-weight:400}
+.lg-cigna{color:#00857C;font-size:18px;letter-spacing:-.02em}
+.lg-cigna i,.lg-humana i{font-style:normal;color:#D96B4A}
+.lg-bcbs{color:#0072CE;font-size:14.5px;font-weight:600}
+.lg-humana{color:#4B9B3F;font-size:17.5px;letter-spacing:-.02em}
+.lg-aetna{color:#7D3F98;font-size:19px;font-weight:600;letter-spacing:.01em}
+.lg-medicare{color:#1A5DAD;font-size:12.5px;font-weight:700;letter-spacing:.12em;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace}
+.lg-tricare{color:#1B3A5C;font-size:14px;font-weight:700;letter-spacing:.14em}
+.lg-comm{color:#5D7672;font-size:13px;font-weight:600}
+/* ecg divider */
+.ecg{height:44px;overflow:hidden;margin-top:-6px}
+.ecg svg{width:100%;height:44px}
+.ecg polyline{fill:none;stroke:#0E5E52;stroke-linejoin:round;stroke-linecap:round}
+.ecg .base{stroke-width:1.6;opacity:.18}
+.ecg .pulse{stroke-width:2.4;opacity:.95;stroke-dasharray:110 1490;stroke-dashoffset:1600;animation:ecgsweep 3.4s linear infinite;filter:drop-shadow(0 0 5px rgba(14,94,82,.5))}
+@keyframes ecgsweep{to{stroke-dashoffset:0}}
+/* payer marquee */
+.payers{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#FFFDF8;overflow:hidden;white-space:nowrap;padding:11px 0}
+.payers .track{display:inline-block;animation:mq 30s linear infinite}
+.pchip{display:inline-flex;align-items:center;gap:8px;margin:0 14px;padding:7px 16px;border-radius:999px;font-size:12.5px;font-weight:600;border:1.5px solid}
+.pchip i{width:8px;height:8px;border-radius:50%}
+.pc1{color:#0E5E52;border-color:#BFDCD2;background:#EDF7F2}.pc1 i{background:#0E5E52}
+.pc2{color:#B3552F;border-color:#EED5C8;background:#FCF3EE}.pc2 i{background:#D96B4A}
+.pc3{color:#8A6418;border-color:#E6D3A6;background:#FAF3E1}.pc3 i{background:#D9A441}
+.pc4{color:#2E6E80;border-color:#C3DFE6;background:#EDF6F8}.pc4 i{background:#2E8FA3}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.payers .note{text-align:center;font-size:11px;color:var(--mut);margin-top:6px}
+/* stats rings */
+.stats-sec{padding:62px 0 0}
+.sec-kick{display:block;text-align:center;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--clay);font-weight:600}
+.sec-h{text-align:center;font-size:clamp(28px,3.5vw,38px);font-weight:800;letter-spacing:-.03em;margin-top:10px;text-wrap:balance}
+.sec-h em{font-style:normal;color:var(--pine)}
+.rings{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.ring-card{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:24px 22px 20px;text-align:center;transition:transform .2s,box-shadow .2s;opacity:0;transform:translateY(14px)}
+.ring-card.in{opacity:1;transform:none}
+.ring-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(23,43,40,.1)}
+.ring{position:relative;width:130px;height:130px;margin:0 auto}
+.ring svg{transform:rotate(-90deg)}
+.ring .bgc{fill:none;stroke:#EFE9DC;stroke-width:11}
+.ring .fgc{fill:none;stroke-width:11;stroke-linecap:round;stroke-dasharray:339;stroke-dashoffset:339;transition:stroke-dashoffset 1.4s cubic-bezier(.2,.7,.2,1)}
+.ring .v{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:800;letter-spacing:-.03em}
+.ring-card h4{font-size:15px;font-weight:700;margin-top:16px}
+.ring-card p{font-size:13px;color:var(--mut);margin-top:5px}
+.fn{text-align:center;font-size:11.5px;color:var(--mut);margin-top:16px}
+/* calculator */
+.calc-sec{padding:62px 0 0}
+.calc{margin-top:32px;background:linear-gradient(135deg,#0E5E52,#0A4038 65%);border-radius:14px;padding:36px;color:#EFF7F3;display:grid;grid-template-columns:1fr 1fr;gap:38px;position:relative;overflow:hidden}
+.calc::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(217,164,65,.22),transparent 65%);top:-160px;right:-120px}
+.calc h3{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.calc .lab{display:flex;justify-content:space-between;font-size:13.5px;margin-top:28px;color:#BFD9CF}
+.calc .lab b{color:#fff;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:15px}
+input[type=range]{width:100%;margin-top:12px;-webkit-appearance:none;appearance:none;height:7px;border-radius:99px;background:linear-gradient(90deg,var(--gold) var(--fill,40%),rgba(255,255,255,.18) var(--fill,40%));outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:5px solid var(--gold);box-shadow:0 4px 14px rgba(0,0,0,.35);cursor:pointer;transition:transform .12s}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.12)}
+.calc .hint{font-size:12px;color:#9FC1B6;margin-top:10px}
+.calc-out{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:28px;backdrop-filter:blur(4px);position:relative;z-index:1}
+.co-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 2px;border-bottom:1px dashed rgba(255,255,255,.16)}
+.co-row:last-child{border:none}
+.co-row span{font-size:13.5px;color:#BFD9CF}
+.co-row b{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:22px;font-weight:700}
+.co-row.big b{font-size:34px;color:var(--gold)}
+.co-row .g{color:#7FE0B8}
+.calc-cta{display:block;text-align:center;background:var(--clay);color:#fff;text-decoration:none;font-weight:700;border-radius:14px;padding:15px;margin-top:18px;transition:transform .15s,box-shadow .15s}
+.calc-cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.calc .fine{font-size:10.5px;color:#8FB4A8;margin-top:12px;line-height:1.5}
+/* how it works */
+.how-sec{padding:62px 0 0}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:32px;counter-reset:st}
+.stepc{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:24px 20px;position:relative;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s,box-shadow .2s}
+.stepc.in{opacity:1;transform:none}
+.stepc:hover{box-shadow:0 16px 40px rgba(23,43,40,.1)}
+.stepc::before{counter-increment:st;content:"0" counter(st);font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--clay)}
+.stepc .ic{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin:12px 0;font-size:20px}
+.s1 .ic{background:var(--mint)} .s2 .ic{background:var(--sky)} .s3 .ic{background:#F3E8CE} .s4 .ic{background:#F6E3D9} .s5 .ic{background:var(--mint)}
+.stepc h4{font-size:16px;font-weight:700}
+.stepc p{font-size:12.5px;color:var(--mut);margin-top:5px}
+.stepc.gate{background:var(--ink);border-color:var(--ink);color:#F2F7F5}
+.stepc.gate p{color:#AFC4BD}
+.stepc.gate::before{color:var(--gold)}
+.stepc.gate .badge-g{position:absolute;top:-11px;right:14px;background:var(--gold);color:#3D2E0A;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+/* intelligence teaser */
+.intel-sec{padding:62px 0 0}
+.intel{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center;margin-top:4px}
+.intel-copy h2{text-align:left;margin-top:12px}
+.intel-copy .sec-kick{text-align:left}
+.intel-copy p{color:var(--mut);font-size:16px;margin-top:16px;max-width:50ch}
+.intel-copy .links{display:flex;gap:18px;margin-top:24px;flex-wrap:wrap;align-items:center}
+.intel-copy .links a{color:var(--pine);font-weight:600;text-decoration:none;font-size:14.5px;border-bottom:2px solid transparent;transition:border-color .15s}
+.intel-copy .links a:hover{border-color:var(--pine)}
+.dashcard{background:#FFFFFF;border:1.5px solid var(--line);border-radius:14px;box-shadow:0 24px 60px rgba(19,35,33,.12);overflow:hidden}
+.dc-head{display:flex;justify-content:space-between;align-items:center;background:#F0F6F3;border-bottom:2px solid var(--pine);padding:10px 18px;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#4A5F5B}
+.dc-head i{width:7px;height:7px;border-radius:50%;background:#2E9B74;display:inline-block;margin-right:7px;animation:blink 2.2s infinite}
+.dc-body{padding:20px 22px 18px}
+.dc-cap{font-size:13px;font-weight:600}
+.dc-sub{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:10px;color:var(--mut);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+.odds-viz{margin-top:14px}
+.od-track{position:relative;height:12px;border-radius:99px;background:#EEF2EE;overflow:visible}
+.od-band{position:absolute;top:0;bottom:0;border-radius:99px;background:#CBDCD2;left:30%;width:44%;transition:left 1.1s cubic-bezier(.2,.7,.2,1),width 1.1s cubic-bezier(.2,.7,.2,1),background 1.1s}
+.od-track.learned .od-band{left:52%;width:22%;background:#2E9B74}
+.od-tick{position:absolute;top:-4px;width:3px;height:20px;border-radius:2px;background:var(--ink);left:52%;transition:left 1.1s cubic-bezier(.2,.7,.2,1)}
+.od-track.learned .od-tick{left:63%}
+.od-pct{position:absolute;top:-26px;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-weight:600;font-size:13px;color:var(--pine);left:52%;transform:translateX(-50%);transition:left 1.1s cubic-bezier(.2,.7,.2,1)}
+.od-track.learned .od-pct{left:63%}
+.od-note{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin-top:9px}
+.od-note b{color:var(--pine)}
+.dc-div{height:1px;background:var(--line);margin:18px -22px}
+.pb-mini{display:grid;gap:9px;margin-top:12px}
+.pbm{display:grid;grid-template-columns:118px 1fr 62px;gap:11px;align-items:center;font-size:12px}
+.pbm .nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pbm .tr{height:13px;border-radius:6px;background:#EEF2EE;overflow:hidden;position:relative}
+.pbm .dn{position:absolute;inset:0 auto 0 0;background:#E8C9A0;border-radius:6px;width:0;transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.pbm .bk{position:absolute;inset:0 auto 0 0;background:var(--pine);border-radius:6px 0 0 6px;width:0;transition:width 1.2s .2s cubic-bezier(.2,.7,.2,1)}
+.pbm .amt2{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;text-align:right;color:var(--ink);font-weight:600;font-size:11.5px}
+.dc-foot{font-size:10.5px;color:var(--mut);padding:0 22px 16px}
+@media(max-width:960px){.intel{grid-template-columns:1fr}}
+/* video */
+.video-sec{padding:62px 0 0}
+.film{margin-top:32px;background:var(--ink);border-radius:14px;padding:14px;box-shadow:0 30px 80px rgba(23,43,40,.25)}
+.film video{display:block;width:100%;border-radius:16px}
+/* faq */
+.faq-sec{padding:62px 0 58px}
+.faq{max-width:760px;margin:30px auto 0;display:grid;gap:10px}
+details.qa{background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:0;overflow:hidden;transition:border-color .2s}
+details.qa[open]{border-color:var(--pine)}
+details.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 22px;font-weight:600;font-size:15px}
+details.qa summary::-webkit-details-marker{display:none}
+details.qa summary::after{content:"+";font-size:22px;color:var(--clay);transition:transform .2s;line-height:1}
+details.qa[open] summary::after{transform:rotate(45deg)}
+details.qa .a{padding:0 22px 18px;color:var(--mut);font-size:14px}
+/* cta band */
+.cta-band{margin:0 0 62px}
+.cta-in{background:linear-gradient(120deg,#0E5E52,#0A403A 70%);border-radius:16px;padding:50px 36px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.cta-in::before,.cta-in::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.1)}
+.cta-in::before{width:300px;height:300px;top:-140px;left:-80px}
+.cta-in::after{width:220px;height:220px;bottom:-110px;right:-60px}
+.cta-in h2{font-size:clamp(28px,3.8vw,42px);font-weight:800;letter-spacing:-.03em;text-wrap:balance}
+.cta-in p{margin:14px auto 0;max-width:56ch;color:#C3DCD3;font-size:16px}
+.cta-in .btn{background:var(--clay);color:#fff;margin-top:28px;font-size:16px;padding:16px 30px}
+.cta-in .btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 18px 44px rgba(0,0,0,.28)}
+.cta-in .mini{display:block;margin-top:14px;font-size:12.5px;color:#9FC1B8}
+footer{border-top:1px solid var(--line);padding:26px 0 34px}
+.f-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--mut);font-size:13px}
+.f-in a{color:var(--pine);text-decoration:none}
+.legal{margin-top:14px;font-size:11.5px;color:#93A5A0;max-width:90ch}
+@media(max-width:960px){.hero{grid-template-columns:1fr}.rings{grid-template-columns:1fr}.calc{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.stepc.gate{grid-column:span 2}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<a class="skip" href="#how">Skip to content</a>
+<div id="prog"></div>
 
-<header class="wrap">
-  <div class="bar">
-    <a class="wordmark" href="/">Intelli-<i>HealthCare</i></a>
-    <nav class="top" aria-label="Site">
-      <a href="#demo">Watch the demo</a>
-      <a href="#how">How it works</a>
-      <a href="/sample.html">Sample analysis</a>
-      <a href="/security.html">Security</a>
-      <a class="navdemo" href="https://app.intelli-healthcare.com" target="_blank" rel="noopener">Live demo ↗</a>
-      <a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a>
-    </nav>
+<div class="wrap"><nav><div class="nav-in">
+  <a class="logo" href="/" style="text-decoration:none;color:inherit"><svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#132E33"/><path d="M15 38h9l5-12 7 20 6-14 4 6h8" fill="none" stroke="#F7F4EE" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Intelli-<b>HealthCare</b></span></a>
+  <a href="#how">How it works</a><a href="#calc">Calculator</a><a href="#intel">Intelligence</a><a href="#film">Tour</a><a href="/sample.html">Sample</a><a href="/security.html">Security</a><a href="https://app.intelli-healthcare.com" target="_blank" rel="noopener">Live platform ↗</a>
+  <a class="nav-cta" href="mailto:admin@intelli-healthcare.com?subject=Free%2048-hour%20denial%20analysis">Get the free analysis</a>
+</div></nav></div>
+
+<section class="hero-sec">
+  <div class="aurora"><i></i><i></i><i></i></div>
+  <header class="wrap hero">
+    <div>
+      <span class="kick"><i></i>Built for physician practices &amp; clinical revenue teams</span>
+      <h1>Your payer denied it. <em>The data says appeal it.<svg viewBox="0 0 300 12" preserveAspectRatio="none"><path d="M4 8 C 60 2, 140 11, 296 5"/></svg></em></h1>
+      <p class="sub">Intelli-HealthCare reads the 835 remittance files your clearinghouse already sends, finds the denials worth fighting, and drafts evidence-cited appeals your own staff approves — then spots each recovery automatically when the payer finally pays.</p>
+      <div class="ctas">
+        <a class="btn btn-p magnet" href="mailto:admin@intelli-healthcare.com?subject=Free%2048-hour%20denial%20analysis">Request the free 48-hour analysis</a>
+        <a class="btn btn-s magnet" href="#film">▶ Watch the 90-second tour</a>
+      </div>
+      <div class="trust">
+        <span><b>+</b> BAA before any PHI moves</span>
+        <span><b>+</b> A clinician-named sign-off on every letter</span>
+        <span><b>+</b> No EHR integration · 835s only</span>
+        <span><b>+</b> $0 upfront — 15% of recoveries</span>
+      </div>
+    </div>
+    <div class="journey tilt" aria-label="One claim, two remittances">
+      <div class="jcard deny"><div class="cap"><span>Denied · June 15</span><span class="amt">−$3,300</span></div><h5>"Not medically necessary."</h5><p>CARC 50 — flagged appealable, 62% overturn odds, EV $2,046.</p></div>
+      <div class="connector"></div>
+      <div class="jcard appeal"><div class="cap"><span>Appealed · June 18</span><span>letter v1</span></div><h5>Evidence-cited letter, human-approved</h5><p>Drafted by the engine, signed off by a named person on your staff.</p></div>
+      <div class="connector" style="margin-left:66px"></div>
+      <div class="jcard paid"><div class="cap"><span>Paid · August 10</span><span class="amt" id="paidAmt">+$0</span></div><h5>Recovered — matched automatically</h5><p>Found in the next remittance and tied back to the June claim. Fee: $495.</p></div>
+      <div class="jfoot">Illustrative example · every step is read from the remittance files themselves</div>
+    </div>
+  </header>
+</section>
+
+<div class="ecg"><svg viewBox="0 0 1440 44" preserveAspectRatio="none">
+  <polyline class="base" points="0,22 240,22 300,22 330,7 360,37 385,3 410,41 440,22 520,22 1440,22"/>
+  <polyline class="pulse" points="0,22 240,22 300,22 330,7 360,37 385,3 410,41 440,22 520,22 1440,22"/>
+</svg></div>
+<div class="payers">
+  <div class="track" id="ptrack">
+    <span class="btile"><b class="lg-uhc">United<span>Healthcare</span></b></span>
+    <span class="btile"><b class="lg-cigna">Cigna<i>.</i></b></span>
+    <span class="btile"><b class="lg-bcbs">BlueCross BlueShield</b></span>
+    <span class="btile"><b class="lg-humana">Humana<i>.</i></b></span>
+    <span class="btile"><b class="lg-aetna">aetna</b></span>
+    <span class="btile"><b class="lg-medicare">MEDICARE ADVANTAGE</b></span>
+    <span class="btile"><b class="lg-tricare">TRICARE</b></span>
+    <span class="btile"><b class="lg-comm">Commercial PPO · HMO</b></span>
+    <span class="btile"><b class="lg-uhc">United<span>Healthcare</span></b></span>
+    <span class="btile"><b class="lg-cigna">Cigna<i>.</i></b></span>
+    <span class="btile"><b class="lg-bcbs">BlueCross BlueShield</b></span>
+    <span class="btile"><b class="lg-humana">Humana<i>.</i></b></span>
+    <span class="btile"><b class="lg-aetna">aetna</b></span>
+    <span class="btile"><b class="lg-medicare">MEDICARE ADVANTAGE</b></span>
+    <span class="btile"><b class="lg-tricare">TRICARE</b></span>
+    <span class="btile"><b class="lg-comm">Commercial PPO · HMO</b></span>
   </div>
-</header>
+  <div class="note">Processes denials from any payer that issues an 835 remittance — names shown for identification only; no partnership implied.</div>
+</div>
 
-<main>
-  <section class="wrap hero">
-    <div class="hero-copy">
-      <p class="eyebrow">Denial appeals for specialty practices · Nationwide</p>
-      <h1>Your payer denied it. <em>The data says appeal it.</em></h1>
-      <p class="sub">Intelli-HealthCare reads your 835 remittance files, finds the denials
-      worth fighting, and drafts evidence-cited appeal letters your own staff approves —
-      then detects each recovery automatically when the payer finally pays.</p>
-      <div class="cta-row">
-        <a class="btn" href="mailto:admin@intelli-healthcare.com?subject=Free%2048-hour%20denial%20analysis%20-%20%5BPractice%20name%5D&body=We%27d%20like%20the%20free%20analysis.%20Practice%3A%20%5Bname%5D%2C%20specialty%3A%20%5Bspecialty%5D%2C%20monthly%20claim%20volume%20(rough)%3A%20%5Bvolume%5D.">Request the free 48-hour analysis</a>
-        <a class="quiet" href="/sample.html">See a sample analysis</a>
-      </div>
-      <p class="fine">One 835 export in, a client-ready report back in 48 business hours. Free, and yours to keep either way.</p>
+<section class="stats-sec wrap">
+  <span class="sec-kick">The uncomfortable math</span>
+  <h2 class="sec-h">Payers count on you <em>not appealing.</em></h2>
+  <div class="rings">
+    <div class="ring-card">
+      <div class="ring"><svg width="130" height="130"><circle class="bgc" cx="65" cy="65" r="54"/><circle class="fgc" cx="65" cy="65" r="54" stroke="#0E5E52" data-p="80"/></svg><div class="v" data-count="80" data-suffix="%">0%</div></div>
+      <h4>of appealed MA denials are overturned¹</h4><p>The odds favor whoever shows up. Most practices never do.</p>
     </div>
-
-    <figure class="doc" aria-label="One denied claim, appealed and recovered, step by step">
-      <div class="doc-head"><b>One claim, two remittances</b><span>Illustrative example</span></div>
-      <div class="entry">
-        <div class="entry-line"><span class="stamp d">Denied · June 15</span><span class="amt neg">−$3,300</span></div>
-        <p>Denied as "not medically necessary." <span class="lift">Another $200 is contractual — a write-down, not a fight.</span></p>
-      </div>
-      <div class="entry">
-        <div class="entry-line"><span class="stamp n">Appealed</span></div>
-        <p>An evidence-cited letter — drafted by the engine, approved by a named human on your staff.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-line"><span class="stamp r">Paid · August 10</span><span class="amt pos">+$3,300</span></div>
-        <p>Recovered, and matched to the June claim automatically from the remittance itself.</p>
-      </div>
-      <figcaption class="doc-foot">Every step of this is read from the remittance files your clearinghouse already sends — the only thing we need to start.</figcaption>
-    </figure>
-  </section>
-
-  <section class="figures" aria-label="Why appeals are worth filing" id="offer">
-    <div class="wrap">
-      <div class="fig win"><b>~80%<sup>1</sup></b><small>of appealed Medicare Advantage denials are overturned</small></div>
-      <div class="fig gap"><b>~90%</b><small>of denials are never appealed at all — the letter costs an hour nobody has</small></div>
-      <div class="fig fee"><b>15%</b><small>of recovered dollars is our only fee. $0 upfront. No recovery, no invoice.</small></div>
+    <div class="ring-card">
+      <div class="ring"><svg width="130" height="130"><circle class="bgc" cx="65" cy="65" r="54"/><circle class="fgc" cx="65" cy="65" r="54" stroke="#D96B4A" data-p="90"/></svg><div class="v" data-count="90" data-suffix="%">0%</div></div>
+      <h4>of denials are never appealed at all¹</h4><p>The letter costs an hour nobody has — so the payer keeps the money by default.</p>
     </div>
-    <div class="wrap"><p class="attr">Overturn and appeal-rate figures as reported for Medicare Advantage (CMS/KFF); results vary by payer and case mix.</p></div>
-  </section>
-
-  <section class="wrap film-sec" id="demo" aria-label="Product demo video">
-    <div class="sec-head"><h2 class="section">See it work — 90 seconds</h2></div>
-    <div class="film">
-      <video controls preload="none" playsinline poster="/demo-poster.jpg">
-        <source src="/Intelli-HealthCare.mp4" type="video/mp4">
-        Your browser doesn't support embedded video — <a href="/Intelli-HealthCare.mp4">download the demo instead</a>.
-      </video>
-      <div class="film-cap"><span>One denied claim, end to end: read → rank → appeal → recovered</span><span>90 sec · sound on</span></div>
+    <div class="ring-card">
+      <div class="ring"><svg width="130" height="130"><circle class="bgc" cx="65" cy="65" r="54"/><circle class="fgc" cx="65" cy="65" r="54" stroke="#D9A441" data-p="15"/></svg><div class="v" data-count="15" data-suffix="%">0%</div></div>
+      <h4>of recovered dollars is our only fee</h4><p>Free 48-hour analysis first. $0 upfront. No recovery, no invoice.</p>
     </div>
-    <p class="fine">Prefer hands-on? <a href="mailto:admin@intelli-healthcare.com?subject=Demo%20access%20request&body=Please%20set%20me%20up%20with%20a%20demo%20login.%0AName%3A%20%0AOrganization%3A%20%0ARole%3A%20">Request demo access</a> and we'll set you up with a personal login to the live environment at <a href="https://app.intelli-healthcare.com" target="_blank" rel="noopener">app.intelli-healthcare.com</a>. Synthetic data only — no PHI.</p>
-  </section>
-
-  <section class="wrap how" id="how">
-    <div class="sec-head"><h2 class="section">How it works</h2></div>
-    <div class="steps">
-    <div class="step">
-      <span class="n">Step 01</span>
-      <h3>Send one 835 export</h3>
-      <p>Paperwork first: a mutual NDA and Business Associate Agreement before any file moves —
-      we treat your data like the covered entity you are. Then your biller exports the remittance
-      files (835/ERA) from the clearinghouse; every major one has the button.</p>
-    </div>
-    <div class="step">
-      <span class="n">Step 02</span>
-      <h3>Get your Denial Opportunity Analysis in 48 hours</h3>
-      <p>A client-ready report: denied dollars by payer and by category, the portion that's
-      genuinely appealable, and your ten highest-value targets — each with the argument we'd make.
-      The analysis runs entirely offline against your files. Keep the report either way.</p>
-    </div>
-    <div class="step">
-      <span class="n">Step 03</span>
-      <h3>Pilot for 90 days, paid only from recoveries</h3>
-      <p>Our engine drafts each appeal with citations into your clinical record — a letter that
-      can't validate can't be approved. A named person on your staff reviews, approves, and files.
-      When the payer pays, the recovery is matched automatically from the next remittance, so the
-      results report writes itself.</p>
-    </div>
-    </div>
-  </section>
-
-  <section class="wrap">
-    <div class="trust">
-      <h2>No letter files itself.</h2>
-      <p>Every appeal carries a <b>Certification of Human Review</b> — who approved it, when, and
-      what the automated validation verified — bound into the filed packet. Drafting is
-      PHI-minimized, a Business Associate Agreement comes before any file moves, and
-      SOC&nbsp;2 Type&nbsp;I preparation is underway. Built for specialty practices nationwide — including the
-      state gold-card prior-auth exemptions your payers won't mention.</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="colo">
-      <div><b>Intelli-HealthCare</b> · Serving specialty practices nationwide</div>
-      <div><a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a> · <a href="/sample.html">Sample analysis</a> · <a href="/security.html">Security &amp; PHI</a></div>
-    </div>
-    <p class="legal">© 2026 Intelli-HealthCare. Recovery estimates are directional planning
-    figures, not guarantees, and nothing here is legal or billing-compliance advice.</p>
   </div>
-</footer>
+  <p class="fn">¹ Overturn and appeal-rate figures as reported for Medicare Advantage (CMS/KFF); results vary by payer and case mix.</p>
+</section>
 
+<section class="calc-sec wrap" id="calc">
+  <span class="sec-kick">Try the math on your numbers</span>
+  <h2 class="sec-h">What are your denials <em>actually worth?</em></h2>
+  <div class="calc">
+    <div>
+      <h3>Model your monthly denial exposure</h3>
+      <div class="lab"><span>Denied dollars per month</span><b id="denV">$40,000</b></div>
+      <input type="range" id="den" min="5000" max="250000" step="5000" value="40000">
+      <div class="lab"><span>Share worth fighting (appealable)</span><b id="appV">70%</b></div>
+      <input type="range" id="app" min="30" max="95" step="5" value="70">
+      <div class="lab"><span>Assumed overturn rate</span><b id="ovV">50%</b></div>
+      <input type="range" id="ov" min="20" max="80" step="5" value="50">
+      <p class="hint">Preloaded with conservative mid-range assumptions — drag to match your book.</p>
+    </div>
+    <div class="calc-out">
+      <div class="co-row"><span>Estimated recovered / month</span><b class="g" id="recM">$14,000</b></div>
+      <div class="co-row"><span>Our fee (15% of recoveries)</span><b id="feeM">$2,100</b></div>
+      <div class="co-row big"><span>Back to your practice / year</span><b id="netY">$142,800</b></div>
+      <a class="calc-cta magnet" href="mailto:admin@intelli-healthcare.com?subject=Free%2048-hour%20denial%20analysis">See your real number — free, in 48 hours</a>
+      <p class="fine">Directional planning figures, not a guarantee — actual recovery depends on payer mix, denial categories, and documentation. The free analysis replaces these sliders with your actual 835 data.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how-sec wrap" id="how">
+  <span class="sec-kick">End to end</span>
+  <h2 class="sec-h">Denied isn't final. <em>It's a queue.</em></h2>
+  <div class="steps">
+    <div class="stepc s1"><div class="ic" style="color:#0E5E52"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><h4>Read</h4><p>Every 835 line your clearinghouse already sends. No EHR project, no IT ticket.</p></div>
+    <div class="stepc s2"><div class="ic" style="color:#1F6F8B"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/></svg></div><h4>Translate</h4><p>Denial codes become plain-English reasons your team can act on.</p></div>
+    <div class="stepc s3"><div class="ic" style="color:#8A6418"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h4>Rank</h4><p>By expected value — overturn odds × dollars, minus the cost of working it.</p></div>
+    <div class="stepc s4 gate"><span class="badge-g">Human gate</span><div class="ic" style="color:#D9A441"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><h4>Appeal</h4><p>Evidence-cited letters. Nothing files without a named person's sign-off.</p></div>
+    <div class="stepc s5"><div class="ic" style="color:#0E5E52"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><path d="M20 6 9 17l-5-5"/></svg></div><h4>Recover</h4><p>Wins matched automatically from the next remittance — nobody types "we won."</p></div>
+  </div>
+</section>
+
+<section class="intel-sec wrap" id="intel">
+  <div class="intel">
+    <div class="intel-copy">
+      <span class="sec-kick">Payer intelligence</span>
+      <h2 class="sec-h">Every outcome makes the <em>next appeal smarter.</em></h2>
+      <p>Overturn odds aren't guesses — they're calibrated per payer and denial reason from recorded outcomes, and every win or loss sharpens the next ranking. Your appeal queue literally gets better at your payers the longer it runs.</p>
+      <p style="font-size:13.5px">The full analytics — payer scorecards, denial mix, recovery funnel — live in the platform itself.</p>
+      <div class="links">
+        <a href="https://app.intelli-healthcare.com" target="_blank" rel="noopener">See the live platform ↗</a>
+        <a href="mailto:admin@intelli-healthcare.com?subject=Walkthrough%20request">Request a guided walkthrough</a>
+      </div>
+    </div>
+    <div class="dashcard">
+      <div class="dc-head"><span><i></i>Live from the platform</span><span>Synthetic data</span></div>
+      <div class="dc-body">
+        <div class="dc-cap">Overturn odds — BCBS · authorization denials</div>
+        <div class="dc-sub" id="odLabel">Seed estimate · no outcomes yet</div>
+        <div class="odds-viz">
+          <div class="od-track" id="odTrack" style="margin-top:30px">
+            <span class="od-band"></span><span class="od-tick"></span><span class="od-pct" id="odPct">52%</span>
+          </div>
+          <div class="od-note"><span>0%</span><span id="odMsg">watching outcomes…</span><span>100%</span></div>
+        </div>
+        <div class="dc-div"></div>
+        <div class="dc-cap">Where the money is</div>
+        <div class="dc-sub">Denied dollars by payer · expected recovery overlay</div>
+        <div class="pb-mini">
+          <div class="pbm"><span class="nm">CIGNA PPO</span><span class="tr"><span class="dn" data-w="100%"></span><span class="bk" data-w="48%"></span></span><span class="amt2">$14,255</span></div>
+          <div class="pbm"><span class="nm">UNITEDHEALTHCARE</span><span class="tr"><span class="dn" data-w="73%"></span><span class="bk" data-w="40%"></span></span><span class="amt2">$10,470</span></div>
+          <div class="pbm"><span class="nm">BCBS OF TEXAS</span><span class="tr"><span class="dn" data-w="52%"></span><span class="bk" data-w="32%"></span></span><span class="amt2">$7,450</span></div>
+        </div>
+      </div>
+      <div class="dc-foot">Synthetic sample book — a guided walkthrough shows these views live, ranked and clickable.</div>
+    </div>
+  </div>
+</section>
+
+<section class="video-sec wrap" id="film">
+  <span class="sec-kick">90 seconds, start to finish</span>
+  <h2 class="sec-h">Watch a denial become <em>a recovery.</em></h2>
+  <div class="film">
+    <video controls preload="none" playsinline poster="poster-frame.jpg">
+      <source src="Intelli-HealthCare.mp4" type="video/mp4">
+      Your browser doesn't support embedded video — <a href="Intelli-HealthCare.mp4">download the video instead</a>.
+    </video>
+  </div>
+</section>
+
+<section class="faq-sec wrap">
+  <span class="sec-kick">Straight answers</span>
+  <h2 class="sec-h">The questions every administrator asks</h2>
+  <div class="faq">
+    <details class="qa"><summary>What do you need from us to start?</summary><div class="a">One 835 export from your clearinghouse or practice-management system — the last 90 days is ideal. That's it. You get a client-ready denial analysis back within 48 business hours, free, and it's yours either way.</div></details>
+    <details class="qa"><summary>Do you touch our EHR?</summary><div class="a">No. We work entirely from remittance files. There's no integration project, no API keys, and no vendor security review of your EHR — a BAA is in place before any real file moves.</div></details>
+    <details class="qa"><summary>Who signs the appeal letters?</summary><div class="a">Your people. The engine drafts an evidence-cited letter and runs safety checks; a named person on your staff reviews, edits, and approves before anything is filed. No letter leaves without a human sign-off.</div></details>
+    <details class="qa"><summary>What does it cost?</summary><div class="a">15% of what's actually recovered — that's the whole model. $0 upfront, no subscription, no per-letter charges. If nothing comes back, you owe nothing.</div></details>
+  </div>
+</section>
+
+<div class="wrap cta-band">
+  <div class="cta-in">
+    <h2>Find out what you're owed before you decide anything.</h2>
+    <p>Send one 835 export. Get a ranked, client-ready denial analysis back in 48 business hours — free, and yours to keep even if we never speak again.</p>
+    <a class="btn magnet" href="mailto:admin@intelli-healthcare.com?subject=Free%2048-hour%20denial%20analysis">Request the free 48-hour analysis</a>
+    <span class="mini">Or see it live first: <a href="https://app.intelli-healthcare.com" target="_blank" rel="noopener" style="color:#fff;font-weight:600">app.intelli-healthcare.com ↗</a> · synthetic data only, no PHI</span>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <div class="f-in">
+    <span style="display:inline-flex;align-items:center;gap:9px"><svg class="mark" style="width:22px;height:22px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#132E33"/><path d="M15 38h9l5-12 7 20 6-14 4 6h8" fill="none" stroke="#F7F4EE" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b style="color:var(--ink)">Intelli-HealthCare</b> · Serving specialty practices nationwide</span>
+    <span><a href="/sample.html">Sample analysis</a> · <a href="/security.html">Security & PHI</a> · <a href="mailto:admin@intelli-healthcare.com">admin@intelli-healthcare.com</a></span>
+  </div>
+  <p class="legal">© 2026 Intelli-HealthCare. Recovery estimates are directional planning figures, not a guarantee; results vary by payer and case mix. The linked environment contains synthetic data only. A BAA is executed before any PHI is exchanged.</p>
+</div></footer>
+
+<script>
+// scroll progress
+const prog=document.getElementById('prog');
+addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+// reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.jcard').forEach((c,i)=>{c.style.transitionDelay=(250+i*240)+'ms';io.observe(c)});
+document.querySelectorAll('.ring-card,.stepc').forEach((c,i)=>{c.style.transitionDelay=((i%5)*90)+'ms';io.observe(c)});
+// safety net — force reveals even if an observer misfires
+setTimeout(()=>document.querySelectorAll('.jcard,.ring-card,.stepc').forEach(el=>el.classList.add('in')),2600);
+// counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.count,s=el.dataset.suffix||'';let v=0;const st=()=>{v+=Math.max(1,Math.round(t/30));if(v>=t)v=t;el.textContent=v+s;if(v<t)requestAnimationFrame(st)};st();cio.unobserve(el)}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+// rings
+const rio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const c=e.target;c.style.strokeDashoffset=339-(339*(+c.dataset.p)/100);rio.unobserve(c)}),{threshold:.6});
+document.querySelectorAll('.fgc').forEach(c=>rio.observe(c));
+// paid amount count-up
+const pio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=document.getElementById('paidAmt');let v=0;const st=()=>{v+=132;if(v>=3300)v=3300;el.textContent='+$'+v.toLocaleString('en-US');if(v<3300)setTimeout(()=>requestAnimationFrame(st),16)};setTimeout(st,1200);pio.unobserve(e.target)}),{threshold:.5});
+pio.observe(document.querySelector('.jcard.paid'));
+// calculator
+const den=document.getElementById('den'),app=document.getElementById('app'),ov=document.getElementById('ov');
+const fmt=n=>'$'+Math.round(n).toLocaleString('en-US');
+function fill(r){const p=(r.value-r.min)/(r.max-r.min)*100;r.style.setProperty('--fill',p+'%')}
+function calc(){
+  const d=+den.value,a=+app.value/100,o=+ov.value/100;
+  const rec=d*a*o, fee=rec*.15, net=(rec-fee)*12;
+  document.getElementById('denV').textContent=fmt(d);
+  document.getElementById('appV').textContent=app.value+'%';
+  document.getElementById('ovV').textContent=ov.value+'%';
+  document.getElementById('recM').textContent=fmt(rec);
+  document.getElementById('feeM').textContent=fmt(fee);
+  document.getElementById('netY').textContent=fmt(net);
+  [den,app,ov].forEach(fill);
+}
+[den,app,ov].forEach(r=>r.addEventListener('input',calc));calc();
+// intelligence teaser: odds learn + bars grow
+const odT=document.getElementById('odTrack');
+if(odT){
+  const oio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;
+    document.querySelectorAll('.pbm .dn,.pbm .bk').forEach(el=>el.style.width=el.dataset.w);
+    let flip=false;
+    const cycle=()=>{flip=!flip;
+      odT.classList.toggle('learned',flip);
+      document.getElementById('odPct').textContent=flip?'63%':'52%';
+      document.getElementById('odLabel').textContent=flip?'Learned from 14 recorded outcomes':'Seed estimate · no outcomes yet';
+      document.getElementById('odMsg').textContent=flip?'band tightens as outcomes land':'watching outcomes…';
+    };
+    setTimeout(cycle,900);setInterval(cycle,3400);
+    oio.unobserve(e.target)}),{threshold:.45});
+  oio.observe(odT);
+}
+// magnetic buttons
+document.querySelectorAll('.magnet').forEach(b=>{
+  b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2)*.14,y=(e.clientY-r.top-r.height/2)*.28;b.style.transform=`translate(${x}px,${y}px)`});
+  b.addEventListener('mouseleave',()=>b.style.transform='');
+});
+// journey tilt toward cursor
+const tilt=document.querySelector('.tilt');
+if(tilt&&matchMedia('(pointer:fine)').matches){
+  tilt.addEventListener('mousemove',e=>{const r=tilt.getBoundingClientRect();const rx=((e.clientY-r.top)/r.height-.5)*-5,ry=((e.clientX-r.left)/r.width-.5)*7;tilt.querySelectorAll('.jcard').forEach(c=>c.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`)});
+  tilt.addEventListener('mouseleave',()=>tilt.querySelectorAll('.jcard').forEach(c=>c.style.transform=''));
+}
+</script>
 </body>
 </html>
